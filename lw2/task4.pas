@@ -9,7 +9,7 @@ BEGIN {GetQueryStringParameter}
   KeyFound := Copy(QueryValue, Pos(Key, QueryValue), Length(QueryValue));
   IF Pos('&', KeyFound) > 0
   THEN
-		GetQueryStringParameter := Copy(KeyFound, Length(Key) + 2, Pos('&', KeyFound) - Length(Key) - 2)
+    GetQueryStringParameter := Copy(KeyFound, Length(Key) + 2, Pos('&', KeyFound) - Length(Key) - 2)
   ELSE
     GetQueryStringParameter := Copy(KeyFound, Length(Key) + 2, Length(KeyFound) - Length(Key))
 END; {GetQueryStringParameter}
