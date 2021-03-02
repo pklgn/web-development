@@ -1,6 +1,6 @@
 PROGRAM SarahRevere(INPUT, OUTPUT);
 USES
-  DOS;
+  GPC;
 VAR
   Query1: STRING;
 BEGIN {SarahRevere}

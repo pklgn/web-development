@@ -1,6 +1,6 @@
 PROGRAM ShowEnv(INPUT, OUTPUT);
 USES
-  DOS;
+  GPC;
 BEGIN {ShowEnv}
   WRITELN('Content-Type: text/plain');
   WRITELN;

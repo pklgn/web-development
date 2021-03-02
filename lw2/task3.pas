@@ -1,6 +1,6 @@
 PROGRAM GreetUser(INPUT, OUTPUT);
 USES
-  DOS;
+  GPC;
 VAR
   QueryValue, NameValue: STRING;
 BEGIN {GreetUser}

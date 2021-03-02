@@ -1,6 +1,6 @@
 PROGRAM WorkWithQueryString(INPUT, OUTPUT);
 USES
-  DOS;                                                                                              
+  GPC;                                                                                              
 FUNCTION GetQueryStringParameter(Key: STRING): STRING;
 VAR
   QueryValue, KeyFound: STRING;
