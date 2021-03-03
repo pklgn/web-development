@@ -31,5 +31,13 @@ function removeExtraBlanks(string $str): ?string
     return $res;
 }
 
-$msg = removeExtraBlanks($_GET['text']);
-echo $msg;
+$newValue =  $_GET['text'];
+if ($newValue !== null)
+{
+    $msg = removeExtraBlanks($newValue);
+    echo $msg;
+}
+else
+{
+    echo 'Nothing to check';
+}

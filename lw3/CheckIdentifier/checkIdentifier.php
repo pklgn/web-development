@@ -2,9 +2,12 @@
 
 function checkIdentifier($identifier): ?string
 {
-    $count = 0;
     $identifier = strtolower($identifier);
     $len = strlen($identifier) - 1;
+    if ($len === -1)
+    {
+        return 'Empty value';
+    }
     while ($len >= 0)
     {
         $ch = $identifier[$len];
@@ -24,5 +27,13 @@ function checkIdentifier($identifier): ?string
     return 'Yes';
 }
 
-$res = checkIdentifier($_GET['Identifier']);
-echo $res;
+$entryValue = $_GET['Identifier'];
+if ($entryValue !== null)
+{
+    $res = checkIdentifier($entryValue);
+    echo $res;
+}
+else
+{
+    echo 'Nothing to check';
+}
