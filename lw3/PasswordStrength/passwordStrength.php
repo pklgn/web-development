@@ -4,14 +4,14 @@ function passwordStrength($password): ?int
 {
     $safety = 0;
     $lenConstant = strlen($password);
-    $len = $lenConstant;
-    $safety += 4 * $len;
+    $len = $lenConstant; # Длина для будущего while
+    $safety += 4 * $len; 
     $countNumbers = 0;
     $countLettersUpper = 0;
     $countLettersLower = 0;
     while ($len > 0)
     {
-        $ch = $password[$len];
+        $ch = $password[$len-1];
         if ($ch >= '0' && $ch <= '9')
         {
             $countNumbers += 1;
@@ -26,7 +26,7 @@ function passwordStrength($password): ?int
         }
         $len -= 1;
     }
-    $safety += $countNumbers;
+    $safety += 4*$countNumbers;
     $safety += 2*($lenConstant - $countLettersUpper);
     $safety += 2*($lenConstant - $countLettersLower);
     if ($countNumbers === 0)
@@ -37,11 +37,19 @@ function passwordStrength($password): ?int
     {
         $safety -= $lenConstant;
     }
-    $newLenConstant = strlen(join(array_unique(str_split($a))));
+    $newLenConstant = strlen(join(array_unique(str_split($password))));
+
     $delta = $lenConstant - $newLenConstant + 1;
     $safety -= $delta;
     return $safety;
 }
 
-
-echo passwordStrength($_GET["password"]);
+$passwordValue = $_GET["password"];
+if ($passwordValue !== null)
+{
+    echo passwordStrength($passwordValue);    
+}
+else
+{
+    echo 'There isn\'t any password to check';
+}
