@@ -2,16 +2,15 @@
 
 function passwordStrength($password): ?int
 {
-    $safety = 0;
+    $safety = 0; # надежность пароля изначально
     $lenConstant = strlen($password);
-    $len = $lenConstant; # Длина для будущего while
-    $safety += 4 * $len; 
+    $safety += 4*$lenConstant; 
     $countNumbers = 0;
     $countLettersUpper = 0;
     $countLettersLower = 0;
-    while ($len > 0)
+    for ($i = 0; $i < $lenConstant; $i++)
     {
-        $ch = $password[$len-1];
+        $ch = $password[$i-1];
         if ($ch >= '0' && $ch <= '9')
         {
             $countNumbers += 1;
@@ -24,11 +23,16 @@ function passwordStrength($password): ?int
         {
             $countLettersLower += 1;
         }
-        $len -= 1;
     }
-    $safety += 4*$countNumbers;
-    $safety += 2*($lenConstant - $countLettersUpper);
-    $safety += 2*($lenConstant - $countLettersLower);
+    $safety += 4*$countNumbers; 
+    if ($countLettersUpper > 0)
+    {
+        $safety += 2*($lenConstant - $countLettersUpper);
+    }
+    if ($countLettersLower > 0)
+    {
+        $safety += 2*($lenConstant - $countLettersLower);
+    }
     if ($countNumbers === 0)
     {
         $safety -= $lenConstant;
@@ -37,9 +41,16 @@ function passwordStrength($password): ?int
     {
         $safety -= $lenConstant;
     }
+    $countRepeats = 0;
     $newLenConstant = strlen(join(array_unique(str_split($password))));
-
-    $delta = $lenConstant - $newLenConstant + 1;
+    foreach (count_chars($password, 1) as $value)
+    {
+        if ($value !== 1)
+        {
+            $countRepeats += 1;
+        }
+    }
+    $delta = $lenConstant - $newLenConstant + $countRepeats;
     $safety -= $delta;
     return $safety;
 }
@@ -52,4 +63,4 @@ if ($passwordValue !== null)
 else
 {
     echo 'There isn\'t any password to check';
-}
+}   
