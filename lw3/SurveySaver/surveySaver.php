@@ -1,41 +1,58 @@
 <?php
 
-function useTemplate($filename, $count, $identifiers): ?string
+function createFile($dir): void
 {
-    fopen("{$filename}", 'w');
-    for ($i = 0; $i < $count; $i++)
+    $templateList = ['first_name', 'last_name', 'email', 'age'];
+    $userFile = fopen($dir, "w+");
+    foreach ($templateList as $value)
     {
-        $str = $rawTemplate[$i]."\n";
-        fwrite("{$filename}", $str); 
+        fwrite($userFile, $value.": \r\n");
     }
-    fclose($filename);
-    return $str;
+    fclose($userFile);
 }
-function surveySaver(): ?string
+
+function writeFile($dir, $array): void
 {
-    $first_name = $_GET['first_name'];
-    $last_name = $_GET['last_name'];
-    $email = $_GET['email'];
-    $age = $_GET['age'];
-    $dir = 'data\\'.$email.'.txt';
-    $userFile = fopen($dir, 'w+');
-    $identifiersArray = ['first_name', 'last_name', 'email', 'age'];
-    $valuesArray = [$first_name, $last_name, $email, $age];
-    useTemplate($dir, count($identifiersArray), $identifiersArray);
-    for ($i = 0; $i < count($identifiersArray); $i++)
+    $userFile = fopen($dir, "w");
+    foreach($array as $value)
     {
-        if ($valuesArray !== null)
+        fwrite($userFile, $value);
+    }
+    fclose($userFile);
+}
+
+function surveySaver(): string
+{
+    $arrayOfParametres = [
+        'first_name' => $_GET['first_name'],
+        'last_name' =>  $_GET['last_name'],
+        'email' => $_GET['email'],
+        'age' => $_GET['age'],
+    ];
+    $uploadDir = 'data\\'.$arrayOfParametres['email'].'.txt';
+    if (! file_exists($uploadDir))
+    {
+        createFile($uploadDir);
+    }
+    $arrayFile = file($uploadDir);
+    reset($arrayFile);
+    foreach($arrayOfParametres as $key => $value)
+    {
+        $oldValue = current($arrayFile); 
+        echo "arrayOfParametres ".$key." and ".$value."<br />";
+        if (! is_null($value))
         {
-            $str = $identifiersArray[$i].': '.$valuesArray[$i]."\n";
+            $str = $key.": ".$value."\n";
         }
         else
         {
-            $str = $identifiersArray[$i]."\n";
+            $str = $oldValue;
         }
-        fwrite($userFile, $str); 
+        $newArrayFile[] = $str;
+        next($arrayFile); 
     }
-    fclose($userFile);
-    return $dir;
+    writeFile($uploadDir, $newArrayFile);
+    return $uploadDir;
 }
 
 surveySaver();
