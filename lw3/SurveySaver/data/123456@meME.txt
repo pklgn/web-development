@@ -1,4 +1,0 @@
-first_name: Me
-last_name: me
-email: 123456@meME
-age: 

@@ -1,4 +1,16 @@
 <?php
+
+function useTemplate($filename, $count, $identifiers): ?string
+{
+    fopen("{$filename}", 'w');
+    for ($i = 0; $i < $count; $i++)
+    {
+        $str = $rawTemplate[$i]."\n";
+        fwrite("{$filename}", $str); 
+    }
+    fclose($filename);
+    return $str;
+}
 function surveySaver(): ?string
 {
     $first_name = $_GET['first_name'];
@@ -9,6 +21,7 @@ function surveySaver(): ?string
     $userFile = fopen($dir, 'w+');
     $identifiersArray = ['first_name', 'last_name', 'email', 'age'];
     $valuesArray = [$first_name, $last_name, $email, $age];
+    useTemplate($dir, count($identifiersArray), $identifiersArray);
     for ($i = 0; $i < count($identifiersArray); $i++)
     {
         if ($valuesArray !== null)
