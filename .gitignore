@@ -1,4 +1,4 @@
 /lw4/images/*.jpg
 
-lw3/SurveySaver/data/*.txt
-lw3/SurveySaver/task*.php
+/lw3/SurveySaver/data/*.txt
+/lw3/SurveySaver/t*.php
