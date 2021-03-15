@@ -1,0 +1,74 @@
+.quote__text
+{
+    color: #848484;
+    font-family: Georgia-Italic,AdobeInvisFont,MyriadPro-Regular;
+    font-size: 28px;
+    box-align: left;
+}
+
+.quote__author
+{
+    font-size: 16px;
+    line-height: 42px;
+    color: #333333;
+    font-weight: 600;
+    font-family: "Open Sans";
+}
+
+.about__title
+{
+    font-size: 24px;
+    line-height: 32px;
+    color: #15a98c;
+    font-weight: 600;
+    font-family: "Open Sans";
+}
+
+.about__items
+{
+    width: 330px;
+    height: 260px;
+    font-size: 19px;
+    line-height: 36px;
+    color: #555555;
+    font-family: "Georgia";
+}
+
+.title
+{
+    font-size: 48px;
+    line-height: 42px;
+    color: #333333;
+    font-weight: 700;
+    font-family: "Open Sans";
+}
+
+.about__text
+{
+    width: 561px;
+    height: 198px;
+    font-size: 19px;
+    line-height: 32px;
+    color: #555555;
+    font-family: "Georgia";
+}
+
+.contact__link
+{
+    width: 562px;
+    height: 263px;
+    font-size: 19px;
+    line-height: 32px;
+    color: #15a98b;
+    font-family: "Georgia";
+}
+
+.contact__link-arrow
+{
+    width: 562px;
+    height: 263px;
+    font-size: 19px;
+    line-height: 32px;
+    color: #15a98b;
+    font-family: "Georgia";
+}

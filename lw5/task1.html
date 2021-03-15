@@ -2,16 +2,18 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Profile Page</title>
+    <link href="css/style.css" rel="stylesheet" />
 </head>
 
 <body>
     <header class="header">
         <div class="photo">
-            <img class="photo__img" src="" alt="">
+            <img class="photo__img" src="images/JaneDoe.png" alt="Jane Doe" title="Jane Doe">
         </div>
         <div class="quote">
+            <img class="quote__sign" src="images/quote.png" alt="Quotes">
             <p class="quote__text">
                 Мы берем на себя много, потому что мало чего боимся
             </p>
@@ -41,7 +43,7 @@
             </div>
             <div class="about__list">
                 <h2 class="about__title">Любимые фильмы:</h2>
-                <ul class="about__items">
+                <ol class="about__items">
                     <li class="about__list-item">
                         Шоу Трумэн
                     </li>
@@ -54,7 +56,7 @@
                     <li class="about__list-item">
                         Гравитация
                     </li>
-                </ul>
+                    <ol>
             </div>
             <h1 class="title">
                 Jane Doe
@@ -77,7 +79,7 @@
     </section>
     <section class="contacts">
         <div class="containter">
-            <a class="contact__link" href="#">Напиши мне</a> 
+            <a class="contact__link" href="#">Напиши мне</a><span class="contact__link-arrow"> →</span>
             <!--Не забудь в псевдоэлемент :after докинуть стрелочку( с пробелом перед ней) → -->
         </div>
     </section>
