@@ -1,0 +1,391 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.page
+{
+    background-color: #fff;
+}
+
+.container
+{
+    max-width: 1000px;
+    margin-left: 460px;
+    margin-right: auto;
+    padding: 0 20px;
+
+}
+
+.menu__list
+{
+    display: flex;
+    justify-content: flex-start;
+    list-style-type: none;
+    height: 50px;
+}
+
+.menu__list-item,
+.menu__list-item_higlighted
+{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu__list-link,
+.menu__list-link_highlighted
+{
+    text-decoration: none;
+    font-size: 19px;
+    line-height: 32px;
+    color: #333;
+    font-family: "Georgia";
+    padding-top: 1px;
+}
+
+.menu__list-item-inner
+{
+    display: flex;
+    align-items: center;
+    padding: 0 21px;
+}
+
+.menu__list-item_higlighted
+{
+    background-color: #15a98c;
+}
+
+.menu__list-link_highlighted
+{
+    color: #f5f5f5;
+}
+
+.icon-img
+{
+    flex-shrink: 0;
+    padding-right: 10px;
+}
+
+.icon-img_shifted
+{
+    margin-left: -2px;
+    padding-right: 10px;
+}
+
+
+.afterheader
+{
+    background: url(../images/background.png), url(../images/background-color.png) left top;
+    background-repeat: no-repeat;   
+}
+
+.header__inner
+{
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 210px;
+}
+
+.photo__img
+{
+    flex: none; /*почему-то не работает так, как должно, картинка расплющивается */
+    border-radius: 5px;
+    margin-right: 60px;
+}
+
+.quote-title
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.quote
+{   
+    box-sizing: border-box;
+    width: 570px;
+    margin-top: 25px;
+    padding-left: 3px;
+}
+
+.quote__text
+{
+    font-size: 28px;
+    line-height: 42px;
+    color: #fff;
+    font-style: italic;
+    font-family: "Georgia";
+}
+
+.quote__author
+{
+    font-size: 16px;
+    line-height: 46px;
+    color: #f5f5f5;
+    font-weight: 600;
+    font-family: "Open Sans";
+    padding-left: 3px;
+}
+
+.title-name
+{
+    margin-top: 68px;
+    box-sizing: content-box;
+    font-size: 48px;
+    color: #333;
+    font-weight: 700;
+    font-family: "Open Sans", sans-serif;
+    height: 61px;
+    padding-left: 4px;
+}
+
+.about-wrapper
+{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.short-info
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 330px;
+    margin-top: 49px;
+}
+
+.about__list
+{
+    font-size: 19px;
+    line-height: 36px;
+    font-family: "Georgia", serif;
+    color: #555;
+    margin-bottom: 37px;
+}
+
+.about__list + .about__list
+{
+    margin-bottom: 0;
+}
+
+.about__items
+{
+    font-size: 19px;
+    color: #555;
+    font-family: "Georgia", sans-serif;
+    padding-inline-start: 21px;
+}
+
+.about__title
+{
+    font-size: 24px;
+    line-height: 24px;
+    color: #15a98c;
+    font-weight: 600;
+    font-family: "Open Sans", sans-serif;
+    margin-bottom: 25px;
+    padding: 0;
+    border: 0;
+}
+
+.about__list-item
+{
+    font-size: 19px;
+    height: 36px;
+    line-height: 1;
+    font-family: "Georgia", sans-serif;
+    margin: 0;
+    padding-inline-start: 0
+}
+
+.main-info
+{
+    width: 570px;
+    margin-left: 60px;
+}
+
+.border-line
+{
+    box-sizing: content-box;
+    border: 3px solid #0db796;
+    border-radius: 3px;
+    width: 54px;
+    margin-top: 24px;
+    background-color: #0db796;
+}
+
+.about-text__text
+{
+    margin-top: 8px;
+    font-size: 19px;
+    line-height: 32px;
+    color: #555;
+    font-family: "Georgia", sans-serif;
+    width: 570px;
+}
+
+.subtitle
+{
+    margin: 42px 0 0 -2px;
+    font-size: 36px;
+    line-height: 42px;
+    color: #333;
+    font-weight: 400;
+    font-family: "Open Sans", sans-serif;
+}
+
+.about-text__text-subtitle
+{
+    margin-top: 15px;
+    font-size: 19px;
+    line-height: 32px;
+    color: #555;
+    font-family: "Georgia", sans-serif;
+    width: 570px;
+}
+
+.contacts__link_wrapper
+{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 27px;
+}
+
+.contacts__link
+{
+    text-decoration: none;
+    width: 570px;
+    font-size: 19px;
+    line-height: 34px;
+    color: #15a98b;
+    font-family: "Georgia", sans-serif;
+}
+
+.contacts__link:after
+{
+    content: "\2192";
+    font-size: 19px;
+    line-height: 34px;
+    color: #15a98b;
+    font-family: "Georgia", sans-serif;
+}
+
+.films-container
+{
+    background-color: #f9f9f9;
+    margin-top: 57px;
+}
+
+.films-container__wrapper
+{
+    max-width: 1200px;
+    margin-left: 360px;
+    margin-right: auto;
+}
+
+.films-container__header
+{
+    padding-top: 35px;
+    font-size: 36px;
+    line-height: 42px;
+    color: #333;
+    font-weight: 400;
+    font-family: "Open Sans";
+}
+
+
+.films-list
+{
+    display: flex;
+    justify-content: stretch;
+    padding-top: 33px;
+    list-style-type: none;
+}
+
+.film
+{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.films-list__item + .films-list__item
+{
+    padding-left: 19px;
+}
+
+.film__photo,
+.film__photo_shifted
+{
+    max-width: 286px;
+    min-height: 190px;
+    border-radius: 5px;
+}
+
+.film__photo_shifted
+{
+    padding-left: 1px;
+}
+
+.film__name
+{
+    margin-top: 23px;
+    font-size: 22px;
+    line-height: 32px;
+    color: #333;
+    font-weight: 700;
+    font-family: "Open Sans";
+    margin-left: -1px;
+}
+
+.film__description
+{
+    margin-top: 17px;
+    line-height: 28px;
+    color: #555;
+    font-family: "Georgia";
+}
+
+.films-container__button
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 54px;
+    padding-right: 20px;
+    padding-bottom: 60px;
+}
+
+.films-container__button-link
+{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: #15a98c;
+    user-select: none; /* Убираем текстовое выделение */
+	text-decoration: none;	/* Убираем подчеркивание */
+	outline: none; /* Убираем контур вокруг ссылки */
+    font-size: 19px;
+    line-height: 32px;
+    color: #f5f5f5;
+    font-family: "Georgia";
+}
+
+.films-container__button-link:active 
+{
+    background-color: #098d71; /* Цвет кнопки при нажатии */
+}
+.films-container__button-link:hover 
+{
+	background-color: #098d71; /* Цвет кнопки при наведении курсора */
+}
+
+
+
