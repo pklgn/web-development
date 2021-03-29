@@ -387,5 +387,179 @@
 	background-color: #098d71; /* Цвет кнопки при наведении курсора */
 }
 
+.form-wrapper
+{
+    margin-top: 53px;
+    font-size: 36px;
+    line-height: 42px;
+    color: #333;
+    font-weight: 300;
+    font-family: "Open Sans";
+}
+
+.form-title
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-title__line
+{
+    width: 200px;
+    size: 1px;
+}
+
+.form-title__text
+{
+    padding: 0 25px 0 30px;
+}
+
+.form
+{
+    margin-left: 690px;
+    max-width: 540px;
+}
+
+.form__list
+{
+    margin-top: 84px;
+    list-style-type: none;
+}
+
+.form__item
+{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.form__select-name
+{
+    font-size: 20px;
+    line-height: 32px;
+    color: #333;
+    font-weight: 400;
+    font-family: "Open Sans";
+}
+
+.label
+{
+    font-size: 20px;
+    line-height: 32px;
+    color: #333;
+    font-weight: 400;
+    font-family: "Open Sans";
+}
+
+.label::after
+{
+    content: " *";
+    color: red;
+}
+
+.form__field
+{
+
+    height: 50px;
+    font-size: 20px;
+    padding-left: 20px;
+    border-radius: 3px;
+    border: 2px solid #c9c9c9;
+}
+
+.form__select-country
+{
+    box-sizing: border-box;
+    appearance: none;
+    padding-left: 20px;
+    height: 50px;
+    width: 540px;
+    font-size: 18px;
+    line-height: 32px;
+    color: #555;
+    font-weight: 400;
+    font-family: "Open Sans";
+    border-radius: 3px;
+    border: 2px solid #a6a6a6;
+    background: url('../images/arrow_down.png') no-repeat right center;
+    background-position-x: 498px;
+    cursor: pointer;
+}
+
+.form__radio
+{
+    font-size: 20px;
+    line-height: 32px;
+    color: #333;
+    font-weight: 400;
+    font-family: "Open Sans";
+}
+
+.form__radio-wrapper
+{
+    display: flex;
+    align-items: center;
+
+}
+
+.form__gender-item-info
+{
+    padding-left: 7px;
+    margin-right: 10px;
+}
+
+
+.submit-container__button
+{
+    display: flex;
+    justify-content: flex-start
+    margin-top: 54px;
+}
+
+.submit-container__button-link
+{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 220px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: #15a98c;
+    user-select: none; /* Убираем текстовое выделение */
+	text-decoration: none;	/* Убираем подчеркивание */
+	outline: none; /* Убираем контур вокруг ссылки */
+    font-size: 19px;
+    line-height: 32px;
+    color: #f5f5f5;
+    font-family: "Georgia";
+}
+
+.submit-container__button-link:active 
+{
+    background-color: #098d71; /* Цвет кнопки при нажатии */
+}
+.submit-container__button-link:hover 
+{
+	background-color: #098d71; /* Цвет кнопки при наведении курсора */
+}
+
+.footer
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    height: 50px;
+    background-color: #f9f9f9;
+}
+
+.footer::before
+{
+    content: "\00A9";
+    margin-right: ;
+}
+
 
 
