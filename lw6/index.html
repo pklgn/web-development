@@ -197,9 +197,53 @@
                 <a class="films-container__button-link" href="#">Все фильмы</a>
             </div>
         </div>
-        
     </div>
-
+    <div class="form-wrapper">
+        <div class="form-title">
+            <hr class="form-title__line">
+            <div class="form-title__text">
+                НАПИШИ МНЕ
+            </div>
+            <hr class="form-title__line">
+        </div>
+        <form class="form" action="">
+            <ul class="form__list">
+                <li class="form__item">
+                    <label for="name" class="label">Ваше имя</label>
+                    <input class="form__field" type="text" id="name">
+                </li>
+                <li class="form__item">
+                    <label for="mail" class="label">Ваш email</label>
+                    <input class="form__field" type="text" id="mail">
+                </li>
+                <li class="form__select">
+                    <div class="form__select-name">Откуда вы?</div>
+                    <select class="form__select-country" name="" >
+                        <option class="form__select-option" value="Russia">Россия</option>
+                        <option class="form__select-option" value="Russia">Россия</option>
+                        <option class="form__select-option" value="Russia">Россия</option>
+                    </select>
+                </li>
+                <li class="form__radio">
+                    <div class="form__radio-name">Ваш пол</div>
+                    <div class="form__radio-wrapper">
+                        <input class="form__gender-item" type="radio" id="male" name="gender" value="male">
+                        <label for="male" class="form__gender-item-info">Мужской</label>
+                        <input class="form__gender-item" type="radio" id="female" name="gender" value="female">
+                        <label for="male" class="form__gender-item-info">Женский</label>    
+                    </div>
+                </li>
+            </ul>
+            <div class="submit-container__button">
+                <a class="submit-container__button-link" href="#">Отправить</a>
+            </div>
+        </form>
+    </div>
+    <footer class="footer">
+        <div class="footer__text">
+            2006-2018 Поволжский государственный технологический университет, ФГБОУ ВО «ПГТУ»
+        </div>
+    </footer>
 </body>
 
 </html>
