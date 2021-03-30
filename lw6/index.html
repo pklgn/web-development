@@ -228,14 +228,18 @@
                     <div class="form__radio-name">Ваш пол</div>
                     <div class="form__radio-wrapper">
                         <input class="form__gender-item" type="radio" id="male" name="gender" value="male">
-                        <label for="male" class="form__gender-item-info">Мужской</label>
+                        <label class="form__gender-item-info" for="male">Мужской</label>
                         <input class="form__gender-item" type="radio" id="female" name="gender" value="female">
-                        <label for="male" class="form__gender-item-info">Женский</label>    
+                        <label class="form__gender-item-info" for="female">Женский</label>    
                     </div>
+                </li>
+                <li class="form__textarea">
+                    <div class="form__textarea-title">Ваше сообщение</div>
+                    <textarea class="form__textarea-field" ></textarea>
                 </li>
             </ul>
             <div class="submit-container__button">
-                <a class="submit-container__button-link" href="#">Отправить</a>
+                <input class="submit-container__button-link" type="submit" value="Отправить">
             </div>
         </form>
     </div>
