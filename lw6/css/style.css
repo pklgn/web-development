@@ -66,14 +66,13 @@
 
 .icon-img
 {
-    flex-shrink: 0;
-    padding-right: 10px;
+    margin-right: 10px;
 }
 
 .icon-img_shifted
 {
-    margin-left: -2px;
-    padding-right: 10px;
+    margin-left: -1px;
+    padding-right: 9px;
 }
 
 
@@ -251,14 +250,16 @@
 .contacts__link_wrapper
 {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
+    margin-left: 390px;
     margin-top: 27px;
 }
 
 .contacts__link
 {
-    text-decoration: none;
-    width: 570px;
+    text-decoration-color: #15a98b;
+    text-decoration-thickness: 0.109em;
+    text-underline-offset: 1px;
     font-size: 19px;
     line-height: 34px;
     color: #15a98b;
@@ -267,7 +268,10 @@
 
 .contacts__link:after
 {
-    content: "\2192";
+    display: inline-block;
+    text-decoration: none;
+    padding-left: 5px;
+    content: " \2192";
     font-size: 19px;
     line-height: 34px;
     color: #15a98b;
@@ -344,10 +348,12 @@
 
 .film__description
 {
+    box-sizing: border-box;
     margin-top: 17px;
     line-height: 28px;
     color: #555;
     font-family: "Georgia";
+    padding: 0 1px;
 }
 
 .films-container__button
@@ -389,7 +395,7 @@
 
 .form-wrapper
 {
-    margin-top: 53px;
+    margin-top: 45px;
     font-size: 36px;
     line-height: 42px;
     color: #333;
@@ -412,18 +418,18 @@
 
 .form-title__text
 {
-    padding: 0 25px 0 30px;
+    padding: 0 24px 0 30px;
 }
 
 .form
 {
+    margin-top: 68px;
     margin-left: 690px;
     max-width: 540px;
 }
 
 .form__list
 {
-    margin-top: 84px;
     list-style-type: none;
 }
 
@@ -458,21 +464,56 @@
     color: red;
 }
 
+.label_email
+{
+    margin-top: 24px;
+    font-size: 20px;
+    line-height: 32px;
+    color: #333;
+    font-weight: 400;
+    font-family: "Open Sans";
+}
+
+.label_email::after
+{
+    content: " *";
+    color: red;
+}
+
+.form__select
+{
+    margin-top: 26px;
+}
+
 .form__field
 {
-
+    margin-top: 3px;
+    border: 2px solid #c9c9c9;
     height: 50px;
     font-size: 20px;
     padding-left: 20px;
     border-radius: 3px;
-    border: 2px solid #c9c9c9;
+}
+
+.form__field:focus
+{
+    outline: none;
+    border: 2px solid #15a98c;  
+}
+
+.form__field:active
+{
+    outline: none;
+    border: 2px solid #15a98c;
+    background-color: #c9c9c9;
 }
 
 .form__select-country
 {
+    margin-top: 2px;
     box-sizing: border-box;
     appearance: none;
-    padding-left: 20px;
+    padding-left: 16px;
     height: 50px;
     width: 540px;
     font-size: 18px;
@@ -487,8 +528,15 @@
     cursor: pointer;
 }
 
+.form__select-country:hover
+{
+    background-color: #c9c9c9;
+    border: 2px solid #a6a6a6;
+}
+
 .form__radio
 {
+    margin-top: 42px;
     font-size: 20px;
     line-height: 32px;
     color: #333;
@@ -499,26 +547,53 @@
 .form__radio-wrapper
 {
     display: flex;
+    justify-content: flex-start;
     align-items: center;
 
 }
 
+.form__gender-item[type="radio"]
+{
+    margin-top: 4px;
+    margin-left: -1px;
+    margin-right: 0px;
+    appearance: none;
+    border: none;
+    width: 17px;
+    height: 17px;
+    outline: none;
+    cursor: pointer;
+    background: url(../images/radio.png) left center no-repeat;
+    background-size: 17px;
+}
+
+.form__gender-item[type="radio"]:checked
+{
+    background: url(../images/radio_checked.png) left center no-repeat;
+}
+
 .form__gender-item-info
 {
-    padding-left: 7px;
-    margin-right: 10px;
+    font-size: 18px;
+    line-height: 40px;
+    color: #333;
+    font-weight: 400;
+    font-family: "Open Sans";
+    padding-left: 4px;
+    margin-right: 41px;
 }
 
 
 .submit-container__button
 {
     display: flex;
-    justify-content: flex-start
-    margin-top: 54px;
+    justify-content: flex-start;
+    margin-top: 44px;
 }
 
 .submit-container__button-link
 {
+    appearance: none;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -526,14 +601,52 @@
     width: 220px;
     height: 50px;
     border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
     background-color: #15a98c;
-    user-select: none; /* Убираем текстовое выделение */
-	text-decoration: none;	/* Убираем подчеркивание */
-	outline: none; /* Убираем контур вокруг ссылки */
     font-size: 19px;
     line-height: 32px;
     color: #f5f5f5;
     font-family: "Georgia";
+}
+
+.form__textarea
+{
+    margin-top: 33px;
+}
+
+.form__textarea-title
+{
+    font-size: 20px;
+    line-height: 32px;
+    color: #333;
+    font-weight: 400;
+    font-family: "Open Sans";
+}
+
+.form__textarea-title::after
+{
+    content: " *";
+    color: red;
+}
+
+.form__textarea-field
+{
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-top: 10px;
+    height: 150px;
+    width: 540px;
+    resize: none;
+    font-size: 18px;
+    line-height: 32px;
+    color: #555;
+    font-weight: 400;
+    font-family: "Open Sans";
+    border-radius: 3px;
+    border: 2px solid #c9c9c9;
+    cursor: text;
 }
 
 .submit-container__button-link:active 
@@ -551,14 +664,23 @@
     justify-content: center;
     align-items: center;
     margin-top: 50px;
-    height: 50px;
+    height: 70px;
     background-color: #f9f9f9;
+    font-size: 16px;
+    line-height: 32px;
+    color: #555;
+    font-family: "Georgia";
 }
 
-.footer::before
+.footer__text
+{
+    margin-top: -4px;
+    margin-left: -8px;
+}
+
+.footer__text::before
 {
     content: "\00A9";
-    margin-right: ;
 }
 
 
