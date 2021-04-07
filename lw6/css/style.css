@@ -13,8 +13,7 @@
 .container
 {
     max-width: 1000px;
-    margin-left: 460px;
-    margin-right: auto;
+    margin: 0 auto;
     padding: 0 20px;
 
 }
@@ -71,15 +70,16 @@
 
 .icon-img_shifted
 {
-    margin-left: -1px;
-    padding-right: 9px;
+    margin-left: -3px;
+    padding-right: 10px;
 }
 
 
 .afterheader
 {
     background: url(../images/background.png), url(../images/background-color.png) left top;
-    background-repeat: no-repeat;   
+    background-repeat: no-repeat;
+    background-position-x: -8px;   
 }
 
 .header__inner
@@ -89,9 +89,8 @@
     padding-top: 210px;
 }
 
-.photo__img
+.person__img
 {
-    flex: none; /*почему-то не работает так, как должно, картинка расплющивается */
     border-radius: 5px;
     margin-right: 60px;
 }
@@ -287,8 +286,7 @@
 .films-container__wrapper
 {
     max-width: 1200px;
-    margin-left: 360px;
-    margin-right: auto;
+    margin: 0 auto;
 }
 
 .films-container__header
@@ -305,7 +303,6 @@
 .films-list
 {
     display: flex;
-    justify-content: stretch;
     padding-top: 33px;
     list-style-type: none;
 }
@@ -335,7 +332,8 @@
     padding-left: 1px;
 }
 
-.film__name
+.film__name,
+.film__name_shifted
 {
     margin-top: 23px;
     font-size: 22px;
@@ -344,6 +342,12 @@
     font-weight: 700;
     font-family: "Open Sans";
     margin-left: -1px;
+}
+
+.film__name_shifted
+{
+    box-sizing: border-box;
+    padding-left: 2px;
 }
 
 .film__description
@@ -395,38 +399,51 @@
 
 .form-wrapper
 {
-    margin-top: 45px;
+    margin: 45px auto 0 auto;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     font-size: 36px;
     line-height: 42px;
-    color: #333;
-    font-weight: 300;
-    font-family: "Open Sans";
 }
 
 .form-title
 {
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-right: 9px;
 }
+
 
 .form-title__line
 {
     width: 200px;
     size: 1px;
+    padding-left: 10px;
 }
 
 .form-title__text
 {
-    padding: 0 24px 0 30px;
+    box-sizing: content-box;
+    font-weight: 300;
+    font-family: "Open Sans";
+    padding: 0px 25px;
 }
 
 .form
 {
     margin-top: 68px;
-    margin-left: 690px;
+    margin: 68px auto 0 auto;
+    /* margin-left: 690px; */
     max-width: 540px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
 
 .form__list
 {
@@ -437,20 +454,22 @@
 {
     display: flex;
     flex-direction: column;
-    
 }
 
 .form__select-name
 {
-    font-size: 20px;
-    line-height: 32px;
+    font: 400 20px/32 "Open Sans";
+    /*font-size: 20px;
+    line-height: 32px;*/
     color: #333;
-    font-weight: 400;
-    font-family: "Open Sans";
+    /*font-weight: 400;
+    font-family: "Open Sans";*/
 }
 
 .label
 {
+
+    margin-bottom: 3px;
     font-size: 20px;
     line-height: 32px;
     color: #333;
@@ -467,27 +486,20 @@
 .label_email
 {
     margin-top: 24px;
-    font-size: 20px;
-    line-height: 32px;
-    color: #333;
-    font-weight: 400;
-    font-family: "Open Sans";
-}
-
-.label_email::after
-{
-    content: " *";
-    color: red;
 }
 
 .form__select
 {
-    margin-top: 26px;
+    margin-top: 15px;
+}
+
+.label_select::after
+{
+    content: "";
 }
 
 .form__field
 {
-    margin-top: 3px;
     border: 2px solid #c9c9c9;
     height: 50px;
     font-size: 20px;
@@ -505,12 +517,11 @@
 {
     outline: none;
     border: 2px solid #15a98c;
-    background-color: #c9c9c9;
 }
 
 .form__select-country
 {
-    margin-top: 2px;
+    margin-top: 4px;
     box-sizing: border-box;
     appearance: none;
     padding-left: 16px;
@@ -528,20 +539,25 @@
     cursor: pointer;
 }
 
-.form__select-country:hover
+.form__select-country:focus
 {
-    background-color: #c9c9c9;
-    border: 2px solid #a6a6a6;
+    outline: none;
+    border: 2px solid #15a98c;
 }
 
 .form__radio
 {
-    margin-top: 42px;
+    margin-top: 41px;
     font-size: 20px;
     line-height: 32px;
     color: #333;
     font-weight: 400;
     font-family: "Open Sans";
+}
+
+.label_radio::after
+{
+    content: "";
 }
 
 .form__radio-wrapper
@@ -579,7 +595,7 @@
     color: #333;
     font-weight: 400;
     font-family: "Open Sans";
-    padding-left: 4px;
+    padding-left: 5px;
     margin-right: 41px;
 }
 
@@ -588,7 +604,7 @@
 {
     display: flex;
     justify-content: flex-start;
-    margin-top: 44px;
+    margin-top: 42px;
 }
 
 .submit-container__button-link
@@ -611,9 +627,14 @@
     font-family: "Georgia";
 }
 
+.label_textarea
+{
+    line-height: 36px;
+}
+
 .form__textarea
 {
-    margin-top: 33px;
+    margin-top: 22px;
 }
 
 .form__textarea-title
@@ -625,11 +646,6 @@
     font-family: "Open Sans";
 }
 
-.form__textarea-title::after
-{
-    content: " *";
-    color: red;
-}
 
 .form__textarea-field
 {
@@ -648,6 +664,19 @@
     border: 2px solid #c9c9c9;
     cursor: text;
 }
+
+.form__textarea-field:active
+{
+    outline: none;
+    border: 2px solid #15a98c;
+}
+
+.form__textarea-field:focus
+{
+    outline: none;
+    border: 2px solid #15a98c;
+}
+
 
 .submit-container__button-link:active 
 {
@@ -674,14 +703,12 @@
 
 .footer__text
 {
-    margin-top: -4px;
-    margin-left: -8px;
+    padding-right: 20px;
+    padding-bottom: 5px;
 }
 
 .footer__text::before
 {
     content: "\00A9";
 }
-
-
 
