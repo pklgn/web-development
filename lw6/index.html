@@ -5,8 +5,8 @@
     <meta charset="utf-8" />
     <title>Profile Page</title>
     <link href="css/style.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
 </head>
 
 <body class="page">
@@ -40,7 +40,7 @@
     <div class="afterheader">
         <div class="container">
             <div class="header__inner">
-                <img class="photo__img" src="images/janedoe.png" alt="Jane Doe" title="Jane Doe" />
+                <img class="person__img" src="images/janedoe.png" alt="Jane Doe" title="Jane Doe" />
                 <div class="quote-title">
                     <div class="quote">
                         <div class="quote__text">
@@ -99,11 +99,10 @@
                 </div>
                 <div class="main-info">
                     <div class="about-text">
-
                         <p class="about-text__text">
                             В 1930-е годы прошлого века физик Джордж Гамоу из университета штата Колорадо начал
                             публиковать
-                            <br> мини-сериал рассказов о неком мистере Томпкинсе, банковском клерке средних лет. Мистер
+                            <br /> мини-сериал рассказов о неком мистере Томпкинсе, банковском клерке средних лет. Мистер
                             Томпкинс, как
                             явствовало из этих историй, интересовался современной наукой.
                         </p>
@@ -115,7 +114,7 @@
                         <p class="about-text__text-subtitle">
                             Он регулярно посещал вечерние лекции местного профессора и, разумеется, всегда засыпал на
                             самом
-                            интересном месте.<br>
+                            интересном месте.<br />
                             А когда просыпался, то обнаруживал себя в каком-нибудь параллельном мире, где один из
                             основных
                             законов
@@ -168,7 +167,7 @@
                     <li class="films-list__item">
                         <div class="film">
                             <img class="film__photo" src="images/movie_three.png" alt="">
-                            <div class="film__name">Астрал</div>
+                            <div class="film__name_shifted">Астрал</div>
                             <p class="film__description">
                                 Джош и Рене переезжают со своими детьми в новый дом, но не успевают толком распаковать
                                 вещи, как начинаются странные события. Необъяснимо перемещаются предметы, в детской
@@ -207,38 +206,40 @@
             </div>
             <hr class="form-title__line">
         </div>
-        <form class="form" action="">
-            <ul class="form__list">
-                <li class="form__item">
-                    <label for="name" class="label">Ваше имя</label>
-                    <input class="form__field" type="text" id="name">
-                </li>
-                <li class="form__item">
-                    <label for="mail" class="label_email">Ваш email</label>
-                    <input class="form__field" type="text" id="mail">
-                </li>
-                <li class="form__select">
-                    <label class="form__select-name">Откуда вы?</label>
-                    <select class="form__select-country" name="" >
-                        <option class="form__select-option" value="Russia">Россия</option>
-                        <option class="form__select-option" value="Russia">Россия</option>
-                        <option class="form__select-option" value="Russia">Россия</option>
-                    </select>
-                </li>
-                <li class="form__radio">
-                    <label class="form__radio-name">Ваш пол</label>
-                    <div class="form__radio-wrapper">
-                        <input class="form__gender-item" type="radio" id="male" name="gender" value="male">
-                        <label class="form__gender-item-info" for="male">Мужской</label>
-                        <input class="form__gender-item" type="radio" id="female" name="gender" value="female">
-                        <label class="form__gender-item-info" for="female">Женский</label>    
-                    </div>
-                </li>
-                <li class="form__textarea">
-                    <div class="form__textarea-title">Ваше сообщение</div>
-                    <textarea class="form__textarea-field" ></textarea>
-                </li>
-            </ul>
+        <form class="form" action="#">
+            <div class="form__fields">
+                <ul class="form__list">
+                    <li class="form__item">
+                        <label class="label label_name" for="name">Ваше имя</label>
+                        <input class="form__field" type="text" id="name">
+                    </li>
+                    <li class="form__item">
+                        <label class="label label_email" for="mail">Ваш email</label>
+                        <input class="form__field" type="text" id="mail">
+                    </li>
+                    <li class="form__select">
+                        <label class="label label_select" for="country">Откуда вы?</label>
+                        <select class="form__select-country" id="country">
+                            <option class="form__select-option" value="Russia">Россия</option>
+                            <option class="form__select-option" value="China">Китай</option>
+                            <option class="form__select-option" value="England">Англия</option>
+                        </select>
+                    </li>
+                    <li class="form__radio">
+                        <label class="label label_radio" for="">Ваш пол</label>
+                        <div class="form__radio-wrapper">
+                            <input class="form__gender-item" type="radio" id="male" name="gender" value="male">
+                            <label class="form__gender-item-info" for="male">Мужской</label>
+                            <input class="form__gender-item" type="radio" id="female" name="gender" value="female">
+                            <label class="form__gender-item-info" for="female">Женский</label>    
+                        </div>
+                    </li>
+                    <li class="form__textarea">
+                        <label class="label label_textarea" for="text">Ваше сообщение</label>
+                        <textarea class="form__textarea-field" id="text"></textarea>
+                    </li>
+                </ul>
+            </div>
             <div class="submit-container__button">
                 <input class="submit-container__button-link" type="submit" value="Отправить">
             </div>
