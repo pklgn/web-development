@@ -1,0 +1,93 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+.container
+{
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.menu
+{
+    display: flex;
+    justify-content: center;
+}
+
+.menu__item,
+.menu__item_highlighted
+{
+    min-height: 33%;
+}
+
+.menu__list
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /*растянули на все 90px*/
+    min-height: 150px;
+    list-style-type: none;
+}
+
+.menu__list-item-inner
+{
+    display: flex;
+    justify-content: center; /*Поставили по центру все ссылки*/
+    min-height: 100%;
+}
+
+.menu__link,
+.menu__link_highlighted
+{
+    display: flex;
+    text-decoration: none; /*убрали подчеркивание у ссылок, текст выровнялся с картинкой*/
+    justify-content: center;
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 0 10px;
+    font: 19px/32px Georgia;
+    color: #333;
+}
+
+.menu__link_highlighted
+{
+    color: #fff;
+    background-color: #15a98c;
+}
+
+
+.icon-img
+{
+    align-self: center; /*УБИРАЕМ РАСТЯГИВАНИЕ ИЗОБРАЖЕНИЯ ПО ВЫСОТЕ!!! ПО УМОЛЧАНИЮ СТОИТ STRETCH*/
+    padding-right: 10px;
+}
+
+.menu__text
+{
+    align-self: center; /*выравниваем текст по центру ссылки вместе с картинкой*/
+}
+
+.header__inner
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.person__img
+{
+    max-width: 100%
+}
+
+.quote-title
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 565px;
+    font: italic 28px/42px Georgia;
+    color: #333;
+}
+
