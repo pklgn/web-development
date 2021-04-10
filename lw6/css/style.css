@@ -38,11 +38,9 @@
 .menu__list-link,
 .menu__list-link_highlighted
 {
+    font: 19px/32px Georgia;
     text-decoration: none;
-    font-size: 19px;
-    line-height: 32px;
     color: #333;
-    font-family: "Georgia";
     padding-top: 1px;
 }
 
@@ -112,32 +110,23 @@
 
 .quote__text
 {
-    font-size: 28px;
-    line-height: 42px;
+    font: italic 28px/42px Georgia;
     color: #fff;
-    font-style: italic;
-    font-family: "Georgia";
 }
 
 .quote__author
 {
-    font-size: 16px;
-    line-height: 46px;
+    font: 600 16px/46px Open Sans;
     color: #f5f5f5;
-    font-weight: 600;
-    font-family: "Open Sans";
     padding-left: 3px;
 }
 
 .title-name
 {
+    font: 700 48px Open Sans;
     margin-top: 68px;
     box-sizing: content-box;
-    font-size: 48px;
     color: #333;
-    font-weight: 700;
-    font-family: "Open Sans", sans-serif;
-    height: 61px;
     padding-left: 4px;
 }
 
@@ -212,37 +201,30 @@
     border: 3px solid #0db796;
     border-radius: 3px;
     width: 54px;
-    margin-top: 24px;
+    margin-top: 20px;
     background-color: #0db796;
 }
 
 .about-text__text
 {
+    font: 19px/32px Georgia;
     margin-top: 8px;
-    font-size: 19px;
-    line-height: 32px;
     color: #555;
-    font-family: "Georgia", sans-serif;
     width: 570px;
 }
 
 .subtitle
 {
+    font: 400 36px/42px Open Sans;
     margin: 42px 0 0 -2px;
-    font-size: 36px;
-    line-height: 42px;
     color: #333;
-    font-weight: 400;
-    font-family: "Open Sans", sans-serif;
 }
 
 .about-text__text-subtitle
 {
+    font: 19px/32px Georgia;
     margin-top: 15px;
-    font-size: 19px;
-    line-height: 32px;
     color: #555;
-    font-family: "Georgia", sans-serif;
     width: 570px;
 }
 
@@ -256,25 +238,21 @@
 
 .contacts__link
 {
+    font: 19px/34px Georgia;
     text-decoration-color: #15a98b;
     text-decoration-thickness: 0.109em;
     text-underline-offset: 1px;
-    font-size: 19px;
-    line-height: 34px;
     color: #15a98b;
-    font-family: "Georgia", sans-serif;
 }
 
 .contacts__link:after
 {
+    font: 19px/34px Georgia;
     display: inline-block;
     text-decoration: none;
     padding-left: 5px;
     content: " \2192";
-    font-size: 19px;
-    line-height: 34px;
     color: #15a98b;
-    font-family: "Georgia", sans-serif;
 }
 
 .films-container
@@ -291,12 +269,9 @@
 
 .films-container__header
 {
+    font: 400 36px/42px Open Sans;
     padding-top: 35px;
-    font-size: 36px;
-    line-height: 42px;
     color: #333;
-    font-weight: 400;
-    font-family: "Open Sans";
 }
 
 
@@ -335,12 +310,9 @@
 .film__name,
 .film__name_shifted
 {
+    font: 700 22px/32px Open Sans;
     margin-top: 23px;
-    font-size: 22px;
-    line-height: 32px;
     color: #333;
-    font-weight: 700;
-    font-family: "Open Sans";
     margin-left: -1px;
 }
 
@@ -371,6 +343,7 @@
 
 .films-container__button-link
 {
+    font: 19px/32px Georgia;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -382,10 +355,7 @@
     user-select: none; /* Убираем текстовое выделение */
 	text-decoration: none;	/* Убираем подчеркивание */
 	outline: none; /* Убираем контур вокруг ссылки */
-    font-size: 19px;
-    line-height: 32px;
     color: #f5f5f5;
-    font-family: "Georgia";
 }
 
 .films-container__button-link:active 
@@ -427,9 +397,8 @@
 
 .form-title__text
 {
+    font: 300 36px/42px Open Sans;
     box-sizing: content-box;
-    font-weight: 300;
-    font-family: "Open Sans";
     padding: 0px 25px;
 }
 
@@ -437,7 +406,6 @@
 {
     margin-top: 68px;
     margin: 68px auto 0 auto;
-    /* margin-left: 690px; */
     max-width: 540px;
     display: flex;
     flex-direction: column;
@@ -458,23 +426,15 @@
 
 .form__select-name
 {
-    font: 400 20px/32 "Open Sans";
-    /*font-size: 20px;
-    line-height: 32px;*/
+    font: 400 20px/32px "Open Sans";
     color: #333;
-    /*font-weight: 400;
-    font-family: "Open Sans";*/
 }
 
 .label
 {
-
+    font: 400 20px/32px "Open Sans";
     margin-bottom: 3px;
-    font-size: 20px;
-    line-height: 32px;
     color: #333;
-    font-weight: 400;
-    font-family: "Open Sans";
 }
 
 .label::after
@@ -502,7 +462,6 @@
 {
     border: 2px solid #c9c9c9;
     height: 50px;
-    font-size: 20px;
     padding-left: 20px;
     border-radius: 3px;
 }
@@ -521,17 +480,14 @@
 
 .form__select-country
 {
+    font: 400 18px/32px "Open Sans";
     margin-top: 4px;
     box-sizing: border-box;
     appearance: none;
     padding-left: 16px;
     height: 50px;
     width: 540px;
-    font-size: 18px;
-    line-height: 32px;
     color: #555;
-    font-weight: 400;
-    font-family: "Open Sans";
     border-radius: 3px;
     border: 2px solid #a6a6a6;
     background: url('../images/arrow_down.png') no-repeat right center;
@@ -547,12 +503,9 @@
 
 .form__radio
 {
+    font: 400 20px/32px "Open Sans";
     margin-top: 41px;
-    font-size: 20px;
-    line-height: 32px;
     color: #333;
-    font-weight: 400;
-    font-family: "Open Sans";
 }
 
 .label_radio::after
@@ -590,11 +543,8 @@
 
 .form__gender-item-info
 {
-    font-size: 18px;
-    line-height: 40px;
+    font: 400 18px/40px "Open Sans";
     color: #333;
-    font-weight: 400;
-    font-family: "Open Sans";
     padding-left: 5px;
     margin-right: 41px;
 }
@@ -609,6 +559,7 @@
 
 .submit-container__button-link
 {
+    font: 19px/32px "Georgia";
     appearance: none;
     box-sizing: border-box;
     display: flex;
@@ -621,10 +572,7 @@
     outline: none;
     cursor: pointer;
     background-color: #15a98c;
-    font-size: 19px;
-    line-height: 32px;
     color: #f5f5f5;
-    font-family: "Georgia";
 }
 
 .label_textarea
@@ -639,27 +587,21 @@
 
 .form__textarea-title
 {
-    font-size: 20px;
-    line-height: 32px;
+    font: 400 20px/32px "Open Sans";
     color: #333;
-    font-weight: 400;
-    font-family: "Open Sans";
 }
 
 
 .form__textarea-field
 {
+    font: 400 18px/32px "Open Sans";
     box-sizing: border-box;
     padding-left: 20px;
     padding-top: 10px;
     height: 150px;
     width: 540px;
     resize: none;
-    font-size: 18px;
-    line-height: 32px;
     color: #555;
-    font-weight: 400;
-    font-family: "Open Sans";
     border-radius: 3px;
     border: 2px solid #c9c9c9;
     cursor: text;
@@ -689,16 +631,14 @@
 
 .footer
 {
+    font: 16px/32px "Georgia";
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 50px;
     height: 70px;
     background-color: #f9f9f9;
-    font-size: 16px;
-    line-height: 32px;
     color: #555;
-    font-family: "Georgia";
 }
 
 .footer__text
