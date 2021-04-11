@@ -76,10 +76,6 @@
     align-items: center;
 }
 
-.person__img
-{
-    max-width: 100%
-}
 
 @media screen and (min-width: 768px)
 {
@@ -150,7 +146,7 @@
 .person__img
 {
     align-self: center;
-    max-width: 330px;
+    max-width: 100%;
     border-radius: 5px;
 }
 
@@ -216,6 +212,13 @@
     flex-direction: column;
 }
 
+.short-info
+{
+    max-width: 570px;
+    align-self: center;
+    width: 100%;
+}
+
 .about__list
 {
     font: 19px/36px "Georgia";
@@ -249,6 +252,8 @@
 .main-info
 {
     max-width: 570px;
+    width: 100%;
+    align-self: center;
 }
 
 .about-text__text
@@ -279,10 +284,18 @@
     margin-top: 27px;
 }
 
-.contacts__link_wrapper
+.contacts__container
 {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.contacts__link_wrapper
+{
+
+    max-width: 570px;
+    width: 100%;
 }
 
 .contacts__link
@@ -345,6 +358,7 @@
 .film__photo,
 .film__photo_shifted
 {
+    width: 100%;
     border-radius: 5px;
 }
 
@@ -405,7 +419,7 @@
 {
     margin: 45px auto 0 auto;
     padding: 0 20px;
-    max-width: 1000px;
+    max-width: 570px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -440,7 +454,8 @@
 .form
 {
     margin-top: 68px;
-    width: 540px;
+    max-width: 540px;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
@@ -519,14 +534,14 @@
     margin-top: 4px;
     box-sizing: border-box;
     appearance: none;
-    padding-left: 16px;
+    padding: 0 16px;
     min-height: 50px;
     max-width: 540px;
     color: #555;
     border-radius: 3px;
     border: 2px solid #a6a6a6;
-    background: url('../images/arrow_down.png') no-repeat right center;
-    background-position-x: 498px;
+    background: url(../images/arrow_down.png) no-repeat right center;
+    background-position-x: 97%;
     cursor: pointer;
 }
 
@@ -602,6 +617,7 @@
     align-items: center;
     min-width: 220px;
     min-height: 50px;
+    width: 100%;
     border-radius: 5px;
     border: none;
     outline: none;
