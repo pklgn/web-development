@@ -81,7 +81,7 @@
 {
     .header__container
     {
-        max-width: 1000px;
+        max-width: 610px;
         margin: 0 auto;
         box-sizing: border-box;
         padding: 0 25px;
@@ -615,9 +615,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 220px;
-    min-height: 50px;
     width: 100%;
+    max-width: 220px;
+    min-height: 50px;
     border-radius: 5px;
     border: none;
     outline: none;
@@ -701,3 +701,49 @@
 {
     content: "\00A9";
 }
+
+@media screen and (min-width: 768px)
+{
+    .films-list
+    {
+        max-width: 592px;
+        flex-wrap: wrap;
+        flex-direction: unset;
+        justify-content: space-between;
+    }
+
+    .long-text
+    {
+        order: -1;
+    }
+
+    .form-title
+    {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding-right: 9px;
+    }
+
+
+    .form-title__line
+    {
+        width: 200px;
+        size: 1px;
+        padding-left: 10px;
+    }
+    .form-title__text
+    {
+        font: 300 36px/42px Open Sans;
+        box-sizing: content-box;
+        padding: 0px 25px;
+        flex-shrink: 0;
+    }
+
+    .form-wrapper
+    {
+        max-width: 1000px;
+    }
+}
+
