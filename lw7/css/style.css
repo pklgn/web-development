@@ -148,6 +148,7 @@
     align-self: center;
     max-width: 100%;
     border-radius: 5px;
+    order: -3;
 }
 
 .quote-title
@@ -162,7 +163,6 @@
 {   
     box-sizing: border-box;
     max-width: 570px;
-    margin-top: 25px;
     padding-left: 3px;
 }
 
@@ -186,13 +186,14 @@
     margin-top: 40px;
     box-sizing: content-box;
     color: #333;
-    height: 61px;
     padding-left: 4px;
+    order: -2;
 }
 
 .border
 {
     align-self: flex-start;
+    order: -1;
 }
 
 .border-line
@@ -210,6 +211,7 @@
 {
     display: flex;
     flex-direction: column;
+    margin-top: 25px;
 }
 
 .short-info
@@ -712,11 +714,6 @@
         justify-content: space-between;
     }
 
-    .long-text
-    {
-        order: -1;
-    }
-
     .form-title
     {
         box-sizing: border-box;
@@ -745,5 +742,256 @@
     {
         max-width: 1000px;
     }
+
+    .short-info
+    {
+        display: flex;
+        justify-content: space-between;
+    }
+
+
 }
 
+@media screen and (min-width: 1024px)
+{
+    .container,
+    .header__container
+    {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    .icon-img,
+    .icon-img_shifted
+    {
+        padding-right: 0;
+        margin-right: 10px;
+    }
+
+    .icon-img_shifted
+    {
+        margin-left: -2px;
+    }
+
+    .header__inner
+    {
+        flex-direction: row;
+        align-items: unset;
+        padding-top: 210px;
+    }
+
+    .person__img
+    {
+        margin-right: 60px;
+    }
+
+    .quote
+    {
+        margin-top: 25px;
+    }
+
+    .quote__text
+    {
+        color: #fff;
+    }
+
+    .quote__author
+    {
+        color: #fff;
+    }
+
+    .title-name
+    {
+        margin-top: 68px;
+        order: initial;
+    }
+
+    .border
+    {
+        order: initial;
+    }
+
+    .border-line
+    {
+        margin-top: 20px;
+    }
+
+    .about-wrapper
+    {
+        flex-direction: row;
+        justify-content: flex-start;
+        margin-top: 0;
+    }
+
+    .short-info
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        max-width: 330px;
+        margin-top: 49px;
+    }
+
+    .about__list
+    {
+        font: 19px/36px "Georgia";
+        color: #555;
+        margin-bottom: 37px;
+    }
+
+    .about__list + .about__list
+    {
+        margin-bottom: 0;
+    }
+
+    .about__title
+    {
+        margin-bottom: 25px;
+        line-height: 24px;
+    }
+
+    .main-info
+    {
+        align-self: unset;
+        margin-left: 60px;
+    }
+
+    .person__img
+    {
+        max-width: 330px;
+        align-self: unset;
+
+    }
+
+    .afterheader__inner
+    {
+        box-sizing: border-box;
+        flex-direction: row;
+        padding-top: 210px;
+    }
+
+    .quote-title
+    {
+        align-self: unset;
+    }
+
+    .about__list-item
+    {
+        height: 36px;
+        line-height: 1;
+    }
+
+    .contacts__container
+    {
+        max-width: 1000px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        justify-content: unset;
+    }
+
+    .contacts__link_wrapper
+    {
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 390px;
+        width: unset;
+        max-width: unset;
+    }
+
+    .films-container
+    {
+        background-color: #f9f9f9;
+        margin-top: 57px;
+    }
+
+    .films-container__wrapper
+    {
+        max-width: 1200px;
+        margin: 0 auto;
+        align-items: unset;
+    }
+
+    .films-container__header
+    {
+        font: 400 36px/42px Open Sans;
+        padding-top: 35px;
+        color: #333;
+    }
+
+    .films-list
+    {
+        justify-content: unset;
+        max-width: 1200px;
+        flex-wrap: nowrap;
+    }
+
+    .films-list__item + .films-list__item
+    {
+        padding-left: 19px;
+    }
+
+    .films-list__item
+    {
+        margin-top: 33px;
+    }
+
+    .film__photo,
+    .film__photo_shifted
+    {
+        max-width: 286px;
+        max-height: 190px;
+        border-radius: 5px;
+    }
+
+    .film__name_shifted
+    {
+        margin-left: 1px
+    }
+
+    .films-container__button
+    {
+        display: flex;
+        justify-content: center;
+        margin-top: 54px;
+        padding-right: 20px;
+        padding-bottom: 60px;
+    }
+
+    .form-wrapper
+    {
+        font-size: 36px;
+    }
+
+    .form-title__text
+    {
+        font: 300 36px/42px Open Sans;
+        box-sizing: content-box;
+        padding: 0px 25px;
+    }
+
+    .form__field
+    {
+        max-height: 50px;
+        min-height: 50px;
+        box-sizing: border-box;
+    }
+
+    .form__select
+    {
+        margin-top: 25px;
+    }
+
+    .form__select-country
+    {
+        margin-top: 1px;
+    }
+
+    .footer__text
+    {
+        padding-right: 40px;
+        padding-bottom: 5px;
+        box-sizing: border-box;
+    }
+}
