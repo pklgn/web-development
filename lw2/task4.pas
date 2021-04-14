@@ -1,17 +1,23 @@
 PROGRAM WorkWithQueryString(INPUT, OUTPUT);
 USES
   GPC;                                                                                              
-FUNCTION GetQueryStringParameter(Key: STRING): STRING;
+FUNCTION GetQueryStringParameter(Parameter: STRING): STRING;
 VAR
-  QueryValue, KeyFound: STRING;
+  QueryValue, ParameterFound: STRING;
 BEGIN {GetQueryStringParameter}
   QueryValue := GetEnv('QUERY_STRING');
-  KeyFound := Copy(QueryValue, Pos(Key, QueryValue), Length(QueryValue));
-  IF Pos('&', KeyFound) > 0
+  IF Pos(Parameter, ParameterFound) > 0
   THEN
-    GetQueryStringParameter := Copy(KeyFound, Length(Key) + 2, Pos('&', KeyFound) - Length(Key) - 2)
+    BEGIN
+      ParameterFound := Copy(QueryValue, Pos(Parameter, QueryValue) + Length(Parameter) + 1, Length(QueryValue));
+      IF Pos('&', ParameterFound) > 0
+      THEN  
+        GetQueryStringParameter := Copy(ParameterFound, 1, Pos('&', ParameterFound) - 1)
+      ELSE
+        GetQueryStringParameter := Copy(ParameterFound, 1, Length(ParameterFound))
+    END      
   ELSE
-    GetQueryStringParameter := Copy(KeyFound, Length(Key) + 2, Length(KeyFound) - Length(Key))
+    GetQueryStringParameter := 'value not found'
 END; {GetQueryStringParameter}
 BEGIN {WorkWithQueryString}
   WRITELN('Content-Type: text/plain');
