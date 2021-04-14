@@ -1,22 +1,20 @@
 <?php
-class Request
+
+function getPostParameter(string $value): string
 {
-    public function getPostParameter(string $value): string
-    {
-        $param = $_POST[$value];
-        return $param;
-    }
-
-    public function getGetParameter(string $value): string
-    {
-        $param = $_GET($value);
-        return $param;
-    }
-
-    public function getRequestMethod(): string
-    {
-        $method = $_SERVER['REQUEST_METHOD'];
-        return $method;
-    }
-
+    $param = $_POST[$value];
+    return $param;
 }
+
+function getGetParameter(string $value): string
+{
+    $param = $_GET($value);
+    return $param;
+}
+
+function getRequestMethod(): string
+{
+    $method = $_SERVER['REQUEST_METHOD'];
+    return $method;
+}
+
