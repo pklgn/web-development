@@ -1,6 +1,6 @@
 <?php
 
-function getPostParameter(string $value): string
+function getPostParameter(string $value)
 {
     $param = $_POST[$value];
     return $param;
