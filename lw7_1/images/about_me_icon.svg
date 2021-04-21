@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 16" width="14" height="16">
+	<defs>
+		<image  width="14" height="16" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAQCAMAAAARSr4IAAAAAXNSR0IB2cksfwAAAKtQTFRF9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX1HHdaGQAAADl0Uk5TABOY2vDBUR7n/4S5/TUP/okzsiWGBDThV5ljvXEa5eiSrfnxGJwX+O8IMDcWJqJIlbzk8+nf1a5TAKLe4gAAAHtJREFUeJxtzdcOgkAQheGD2A72iogFK3aqyvs/mbvLRojxv/symRlAZFTMaq0OXaNJmaXZUmK7o9Tt5WRfcaDF4b/pzy5G+eXxRGlqzxzxd+4upJYrcu1Zmy13e8EDv3nA0S94OuPCUlfcyrwDj0KOPB2EUZykz9c7Az5zIAppsiwuFQAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+	</style>
+	<g id="Top menu">
+		<use id="about_me_icon" href="#img1" x="0" y="0" />
+	</g>
+</svg>

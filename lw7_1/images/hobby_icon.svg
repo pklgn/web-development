@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+	<defs>
+		<image  width="16" height="16" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAAXNSR0IB2cksfwAAAHtQTFRFAAAAPDw8RUVFRkZGRkZGRkZGRUVFRUVFRkZGRkZGSUlJSEhIRUVFRERERUVFR0dHRUVFRUVFRUVFRkZGRkZGRkZGRkZGR0dHRkZGUFBQRUVFRkZGT09PR0dHRkZGAAAAR0dHQkJCRkZGRUVFRkZGRkZGAAAARkZGRkZGeSsN+wAAACl0Uk5TAAZmzvO+R6L/9jAw/2CnqGCm+fmm1/LGeA3t7Q1UhgK3EM27BaUBjI1nMPlKAAAAh0lEQVR4nE2OBxLCMAwEN10B00kB0hv8/4UktgnZGVknWWcZHNfzgxDCwPdcB4hkJt7tYxElERxEczyZfOZixPVm8p1kHtyQkK5aX6RkVupQkpFvDaJyHk87rx2vAkrr1kc5f4zqv6Zaaurm90BT6wZtZ+quxVL0S6MvWBlGUePAhun9mYz6AuJzCddMuMbmAAAAAElFTkSuQmCC"/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+	</style>
+	<g id="Top menu">
+		<use id="hobby_icon" href="#img1" x="0" y="0" />
+	</g>
+</svg>
