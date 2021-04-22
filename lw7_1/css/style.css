@@ -791,6 +791,7 @@
     {
         order: unset;
         margin-top: 25px;
+        grid-area: quote;
     }
 
     .quote__text
@@ -807,16 +808,19 @@
     {
         margin-top: 68px;
         order: initial;
+        grid-area: title-name;
     }
 
     .border
     {
         order: initial;
+        grid-area: border;
     }
 
     .border-line
     {
         margin-top: 20px;
+        max-width: 20px;
     }
 
     .about-wrapper
@@ -864,15 +868,21 @@
     {
         max-width: 330px;
         align-self: unset;
-
+        grid-area: person__img;
     }
 
     .afterheader__inner
     {
+        display: grid;
         box-sizing: border-box;
-        flex-direction: row;
         padding-top: 210px;
         max-width: 1000px;
+        grid-template-columns: 330px 570px;
+        grid-column-gap: 60px;
+        grid-template-areas: 
+            "person__img quote"
+            "person__img title-name"
+            "person__img border";
     }
 
     .quote-title
