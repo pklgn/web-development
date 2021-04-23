@@ -1,6 +1,15 @@
 <?php
 
 require_once "../utils/request.php";
+require_once "../utils/template.php";
+
+function removeExtraBlanksFrom($value): string
+{
+    $value = trim($value);
+    preg_replace('/\s+/', ' ', $value);
+    return $value;
+}
+
 
 function saveFeedbackPage()
 {
@@ -10,12 +19,18 @@ function saveFeedbackPage()
     $gender = getPostParameter('gender');
     $country = getPostParameter('country');
     $errors = [];
+    $legalValues = [];
+    $nameTemplate = '/^([а-яА-ЯЁёa-zA-Z]+)$/u';
+
+
+    $message = removeExtraBlanksFrom($message);
     if (!isset($name))
     {
         $errors['name_error_msg'] = 'Отсутствует имя';
     }
-    elseif (!ctype_alpha($name))
+    elseif (!preg_match($nameTemplate, $name))
     {
+        $name = removeExtraBlanksFrom($name);
         $errors['name_error_msg'] = 'Неверно набранное имя';
     }
 
@@ -25,6 +40,7 @@ function saveFeedbackPage()
     }
     else if (!filter_var($email, FILTER_VALIDATE_EMAIL))
     {
+        $email = trim($email);
         $errors['email_error_msg'] = 'Неверно набранная электронная почта';
     }
 
@@ -32,11 +48,15 @@ function saveFeedbackPage()
     {
         $errors['message_error_msg'] = "Отсутствует сообщение";
     }
-
-    foreach($errors as $answer)
+    else
     {
-        echo "<p>$answer</p>";
+        $message = removeExtraBlanksFrom($message);
+    }
+
+    if (count($errors))
+    {
+        renderTemplate("main.tpl.php", $errors);
     }
 }
 
-saveFeedbackPage();
+

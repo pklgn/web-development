@@ -97,6 +97,7 @@
     min-height: 50px;
     padding-left: 20px;
     border-radius: 3px;
+    font: 400 18px/32px "Open Sans";
 }
 
 .form__field:focus
@@ -329,4 +330,11 @@
         margin-top: 1px;
     }
 
+}
+
+.error
+{
+    color: red;
+    font: 400 16px "Open Sans";
+    margin: 5px auto 0 0;
 }

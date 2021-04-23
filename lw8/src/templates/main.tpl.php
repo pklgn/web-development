@@ -30,14 +30,14 @@
                 </li>
                 <li class="form__item">
                     <label class="label label_email" for="email">Ваш email</label>
-                    <input class="form__field" type="text" id="email">
+                    <input class="form__field" name="email" type="text" id="email">
                     <?php if (isset($args['email_error_msg'])): ?>
                         <p class="error"><?php echo $args['email_error_msg']; ?></p>
                     <?php endif; ?>
                 </li>
                 <li class="form__select">
                     <label class="label label_select" for="country">Откуда вы?</label>
-                    <select class="form__select-country" id="country">
+                    <select class="form__select-country" name="country" id="country">
                         <option class="form__select-option" value="Russia">Россия</option>
                         <option class="form__select-option" value="China">Китай</option>
                         <option class="form__select-option" value="England">Англия</option>
@@ -54,7 +54,7 @@
                 </li>
                 <li class="form__textarea">
                     <label class="label label_textarea" for="text">Ваше сообщение</label>
-                    <textarea class="form__textarea-field" id="text"></textarea>
+                    <textarea class="form__textarea-field" name="message" id="text"></textarea>
                     <?php if (isset($args['message_error_msg'])): ?>
                         <p class="error"><?php echo $args['message_error_msg']; ?></p>
                     <?php endif; ?>

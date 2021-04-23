@@ -1,14 +1,14 @@
 <?php
 
-function getPostParameter(string $value)
+function getPostParameter(string $value): string
 {
-    $param = $_POST[$value];
+    isset($value) ? $param = $_POST[$value] : $param = null;
     return $param;
 }
 
 function getGetParameter(string $value): string
 {
-    $param = $_GET($value);
+    isset($value) ? $param = $_POST[$value] : $param = null;
     return $param;
 }
 
