@@ -36,7 +36,7 @@
 .menu__link,
 .menu__link_highlighted
 {
-    text-decoration: none; /*убрали подчеркивание у ссылок, текст выровнялся с картинкой*/
+    text-decoration: none;
     display: flex;
     justify-content: center;
     min-width: 100%;
@@ -53,7 +53,7 @@
 
 .icon-img
 {
-    align-self: center; /*УБИРАЕМ РАСТЯГИВАНИЕ ИЗОБРАЖЕНИЯ ПО ВЫСОТЕ!!! ПО УМОЛЧАНИЮ СТОИТ STRETCH*/
+    align-self: center;
     padding-right: 10px;
 }
 
@@ -125,7 +125,7 @@
 {
     background: url(../images/background.png), url(../images/background-color.png) left top;
     background-repeat: no-repeat;
-    background-position-x: -8px;   
+    background-position-x: -8px; /*нужно для совпадения при сравнении с PixelPerfect (т.к ширина страницы меньше из-за полосы прокрутки)*/  
 }
 
 .afterheader__inner
@@ -156,9 +156,8 @@
 }
 
 .quote
-{   order: -2;
+{   order: -2; /*изменяю порядок расположения цитаты и фото, фото после цитаты*/
     box-sizing: border-box;
-
     padding-left: 3px;
 }
 
@@ -232,7 +231,7 @@
 
 .about__title
 {
-    margin-bottom: 20px; /*нужно будет поменятьна 25 при больших размерах*/
+    margin-bottom: 20px;
     font: 600 24px "Open Sans";
     color: #15a98c;
     padding: 0;
@@ -255,7 +254,7 @@
 }
 
 .nobr{
-    display: inline-block;
+    display: inline-block; /*специальный селектор, для того, чтобы сделать текст неразрывным*/
 }
 
 .about-text__text
@@ -318,7 +317,6 @@
     content: " \2192";
     color: #15a98b;
 }
-
 
 .films-container__wrapper
 {
@@ -723,13 +721,13 @@
         padding-right: 9px;
     }
 
-
     .form-title__line
     {
         width: 200px;
         size: 1px;
         padding-left: 10px;
     }
+    
     .form-title__text
     {
         font: 300 36px/42px Open Sans;
