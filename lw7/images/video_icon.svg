@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
+	<defs>
+		<image  width="16" height="16" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAAXNSR0IB2cksfwAAAK5QTFRFAAAAAAAAR0dHRkZGRkZGREREa2trR0dHRkZGRkZGSEhIRkZGRkZGRUVFR0dHRkZGRkZGQ0NDRkZGRkZGRUVFRkZGSEhIQ0NDRkZGRUVFRUVFQEBASkpKRUVFRkZGR0dHRkZGRkZGR0dHRkZGRUVFRkZGRERESEhIRkZGSUlJRkZGRUVFRkZGRUVFR0dHRkZGRkZGRkZGSEhIRkZGRkZGRkZGRUVFTU1NR0dHAAAA+La1vAAAADp0Uk5TAAI7v+yJA1Ti0TXS//9O3q8V/ozFlbc0KKKOFhd/rkkPfbfw8O5hMKAmzaDg31P59pdE8yNQUAk2AepC2BkAAACKSURBVHicXY6HDsJQCEWvWmcvrXtr1Tqq1r3//8ek6Yv6PIQEToAAGDLAb5nNOfmC6YulcgUuhZ4RPlmt1Uk2jGiSLbRVdIzo9voDDEfjIGkmU8zClHm4WGLlC/glWjukJTa0xTYWS0gU6zepEA1d2YnYR/cHnTh+NnjC+UJcbwl3Te8BPF388XoDLAAOzisKmIYAAAAASUVORK5CYII="/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+	</style>
+	<g id="Top menu">
+		<use id="video_icon" href="#img1" x="0" y="0" />
+	</g>
+</svg>

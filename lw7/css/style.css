@@ -30,15 +30,8 @@
 .menu__item_highlighted
 {
     display: flex; 
-    /*Растянули элементы по всей высоте*/
-    /* flex-grow: 1;
-    // flex-shrink: 1;
-    // flex-basis: auto;
-    // flex: 1 1 auto; */
     flex: 1; 
 }
-
-
 
 .menu__link,
 .menu__link_highlighted
@@ -138,8 +131,11 @@
 .afterheader__inner
 {
     display: flex;
+    margin: 0 auto;
+    max-width: 570px;
     justify-content: flex-start;
     flex-direction: column;
+    align-items: center;
     padding-top: 100px; /*Отступ только для мобильной версии*/
 }
 
@@ -148,7 +144,7 @@
     align-self: center;
     max-width: 100%;
     border-radius: 5px;
-    order: -3;
+    order: -1;
 }
 
 .quote-title
@@ -160,22 +156,22 @@
 }
 
 .quote
-{   
+{   order: -2;
     box-sizing: border-box;
-    max-width: 570px;
+
     padding-left: 3px;
 }
 
 .quote__text
 {
     font: italic 28px/42px Georgia;
-    color: black;
+    color: white;
 }
 
 .quote__author
 {
     font: 600 16px/46px Open Sans;
-    color: black;
+    color: white;
     padding-left: 3px;
 }
 
@@ -187,13 +183,11 @@
     box-sizing: content-box;
     color: #333;
     padding-left: 4px;
-    order: -2;
 }
 
 .border
 {
     align-self: flex-start;
-    order: -1;
 }
 
 .border-line
@@ -211,7 +205,7 @@
 {
     display: flex;
     flex-direction: column;
-    margin-top: 25px;
+    margin-top: 0;
 }
 
 .short-info
@@ -219,6 +213,7 @@
     max-width: 570px;
     align-self: center;
     width: 100%;
+    margin-top: 42px;
 }
 
 .about__list
@@ -256,6 +251,11 @@
     max-width: 570px;
     width: 100%;
     align-self: center;
+    order: -1;
+}
+
+.nobr{
+    display: inline-block;
 }
 
 .about-text__text
@@ -263,7 +263,7 @@
     font: 19px/32px Georgia;
     margin-top: 8px;
     color: #555;
-    max-width: 570px;
+    max-width: 560px;
 }
 
 .subtitle
@@ -747,6 +747,7 @@
     {
         display: flex;
         justify-content: space-between;
+        margin-top: 42px;
     }
 
 
@@ -784,12 +785,15 @@
 
     .person__img
     {
+        order: unset;
         margin-right: 60px;
     }
 
     .quote
     {
-        margin-top: 25px;
+        order: unset;
+        margin-top: 24px;
+        grid-area: quote;
     }
 
     .quote__text
@@ -804,18 +808,25 @@
 
     .title-name
     {
-        margin-top: 68px;
+        margin-top: 60px;
         order: initial;
+        grid-area: title-name;
+        box-sizing: border-box;
+        padding-top: 7px;
     }
 
     .border
     {
         order: initial;
+        grid-area: border;
+        box-sizing: border-box;
+        padding-bottom: 8px;
     }
 
     .border-line
     {
         margin-top: 20px;
+        max-width: 20px;
     }
 
     .about-wrapper
@@ -832,6 +843,7 @@
         justify-content: flex-start;
         max-width: 330px;
         margin-top: 49px;
+        order: -1;
     }
 
     .about__list
@@ -862,14 +874,21 @@
     {
         max-width: 330px;
         align-self: unset;
-
+        grid-area: person__img;
     }
 
     .afterheader__inner
     {
+        display: grid;
         box-sizing: border-box;
-        flex-direction: row;
         padding-top: 210px;
+        max-width: 1000px;
+        grid-template-columns: 330px 570px;
+        grid-column-gap: 60px;
+        grid-template-areas: 
+            "person__img quote"
+            "person__img title-name"
+            "person__img border";
     }
 
     .quote-title
