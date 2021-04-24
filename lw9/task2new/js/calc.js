@@ -94,7 +94,7 @@ function makeCalc(usableArray) {
 
 function calc(inputExp) {
     let expressionArray;
-    let answer;
+    let answer = null;
     expressionArray = arrayExp(inputExp);
     if (expressionArray.length) {
         answer = makeCalc(expressionArray);
@@ -110,7 +110,5 @@ function calc(inputExp) {
     } else {
         console.log('There are extra or wrong values in the expression ');
     }
-    return true;
+    return answer;
 }
-
-calc('* 2 / 8 4 2 2 2');
