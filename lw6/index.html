@@ -2,7 +2,8 @@
 <html lang="ru">
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <title>Profile Page</title>
     <link href="css/style.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -12,26 +13,26 @@
 <body class="page">
 
     <header class="header">
-        <div class="container">
+        <div class="header__container">
             <nav class="menu">
                 <ul class="menu__list">
-                    <li class="menu__list-item_higlighted">
-                        <div class="menu__list-item-inner">
-                            <img class="icon-img" src="images/about_me_icon.png" alt="icon">
-                            <a class="menu__list-link_highlighted" href="#">Обо мне</a>
-                        </div>
+                    <li class="menu__item_highlighted">
+                        <a class="menu__link_highlighted" href="#">
+                            <img class="icon-img" src="images/about_me_icon.svg" alt="icon" />
+                            <div class="menu__text">Обо мне</div>
+                        </a>
                     </li>
-                    <li class="menu__list-item">
-                        <div class="menu__list-item-inner">
-                            <img class="icon-img" src="images/hobby_icon.png" alt="icon">
-                            <a class="menu__list-link" href="#">Мое хобби</a>
-                        </div>
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">
+                            <img class="icon-img" src="images/hobby_icon.svg" alt="icon" />
+                            <div class="menu__text">Мое хобби</div>
+                        </a>
                     </li>
-                    <li class="menu__list-item">
-                        <div class="menu__list-item-inner">
-                            <img class="icon-img_shifted" src="images/video_icon.png" alt="icon">
-                            <a class="menu__list-link" href="#">Любимые фильмы</a>
-                        </div>
+                    <li class="menu__item menu__item_shifted">
+                        <a class="menu__link" href="#">
+                            <img class="icon-img icon-img_shifted" src="images/video_icon.svg" alt="icon" />
+                            <div class="menu__text menu__text_shifted">Любимые фильмы</div>
+                        </a>
                     </li>
                 </ul>
             </nav>
@@ -39,21 +40,19 @@
     </header>
     <div class="afterheader">
         <div class="container">
-            <div class="header__inner">
+            <div class="afterheader__inner">
                 <img class="person__img" src="images/janedoe.png" alt="Jane Doe" title="Jane Doe" />
-                <div class="quote-title">
-                    <div class="quote">
-                        <div class="quote__text">
-                            Мы берем на себя много, потому что мало чего боимся
-                        </div>
-                        <div class="quote__author">— Том Демарко. Deadline</div>
+                <div class="quote">
+                    <div class="quote__text">
+                        Мы берем на себя много, потому что мало чего боимся
                     </div>
-                    <div class="title-name">
-                        Jane Doe
-                    </div>
-                    <div class="border">
-                        <hr class="border-line" />
-                    </div>
+                    <div class="quote__author">— Том Демарко. Deadline</div>
+                </div>
+                <div class="title-name">
+                    Jane Doe
+                </div>
+                <div class="border">
+                    <hr class="border-line" />
                 </div>
             </div>
         </div>
@@ -102,7 +101,7 @@
                         <p class="about-text__text">
                             В 1930-е годы прошлого века физик Джордж Гамоу из университета штата Колорадо начал
                             публиковать
-                            <br /> мини-сериал рассказов о неком мистере Томпкинсе, банковском клерке средних лет. Мистер
+                            <span class="nobr">мини-сериал</span> рассказов о неком мистере Томпкинсе, банковском клерке средних лет. Мистер
                             Томпкинс, как
                             явствовало из этих историй, интересовался современной наукой.
                         </p>
@@ -114,8 +113,8 @@
                         <p class="about-text__text-subtitle">
                             Он регулярно посещал вечерние лекции местного профессора и, разумеется, всегда засыпал на
                             самом
-                            интересном месте.<br />
-                            А когда просыпался, то обнаруживал себя в каком-нибудь параллельном мире, где один из
+                            интересном месте.
+                            <span class="nobr"> А когда</span> просыпался, то обнаруживал себя в каком-нибудь параллельном мире, где один из
                             основных
                             законов
                             физики действовал не так, как в его мире.
@@ -126,10 +125,9 @@
         </div>
     </div>
     <div class="contacts">
-        <div class="container">
+        <div class="contacts__container">
             <div class="contacts__link_wrapper">
                 <a class="contacts__link" href="#">Напиши мне</a>
-
             </div>
         </div>
     </div>
@@ -142,7 +140,7 @@
                 <ul class="films-list">
                     <li class="films-list__item">
                         <div class="film">
-                            <img class="film__photo" src="images/movie_one.png" alt="">
+                            <img class="film__photo" src="images/movie_one.png" alt="Побег из Шоушенка">
                             <div class="film__name">Побег из Шоушенка</div>
                             <p class="film__description">
                                 Успешный банкир Энди Дюфрейн обвинен в убийстве собственной жены и ее любовника.
@@ -153,9 +151,9 @@
                             </p>
                         </div>
                     </li>
-                    <li class="films-list__item">
+                    <li class="films-list__item short-text">
                         <div class="film">
-                            <img class="film__photo" src="images/movie_two.png" alt="">
+                            <img class="film__photo" src="images/movie_two.png" alt="Наркоз">
                             <div class="film__name">Наркоз</div>
                             <p class="film__description">
                                 Клай Бересфорд вынужден лечь под нож. Однако в процессе операции на сердце он неожиданно
@@ -166,7 +164,7 @@
                     </li>
                     <li class="films-list__item">
                         <div class="film">
-                            <img class="film__photo" src="images/movie_three.png" alt="">
+                            <img class="film__photo" src="images/movie_three.png" alt="Астрал">
                             <div class="film__name_shifted">Астрал</div>
                             <p class="film__description">
                                 Джош и Рене переезжают со своими детьми в новый дом, но не успевают толком распаковать
@@ -176,9 +174,9 @@
                             </p>
                         </div>
                     </li>
-                    <li class="films-list__item">
+                    <li class="films-list__item long-text">
                         <div class="film">
-                            <img class="film__photo_shifted" src="images/movie_four.png" alt="">
+                            <img class="film__photo_shifted" src="images/movie_four.png" alt="Гравитация">
                             <div class="film__name">Гравитация</div>
                             <p class="film__description">
                                 Доктор Райан Стоун, блестящий специалист в области медицинского инжиниринга,
