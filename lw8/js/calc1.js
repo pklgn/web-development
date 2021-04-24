@@ -1,11 +1,9 @@
-let possibleActions = ['*', '/', '+', '-'];
-
 function makeSimpleCalc(sign, leftOperand, rightOperand) {
     let result;
     switch (sign) {
         case '*':
             result = leftOperand * rightOperand;
-            break
+            break;
         case '+':
             result = +leftOperand + +rightOperand;
             break;
@@ -19,35 +17,40 @@ function makeSimpleCalc(sign, leftOperand, rightOperand) {
     return result;
 }
 
-function validateExp(expArray) {
-    let valid;
-    let operatorsAmount, operandsAmount, bracketsAmount;
-    operandsAmount = 0;
-    operatorsAmount = 0;
-    bracketsAmount = 0;
-    valid = true;
-    for (let i = 0; i < expArray.length; i++) {
-         if (possibleActions.includes(expArray[i])) {
-             operatorsAmount += 1;
-         } else if (!isNaN(expArray[i])) {
-             operandsAmount += 1;
-         } else if (expArray[i] === '(') {
-             bracketsAmount += 1;
-             expArray.splice(i, 1);
-         } else if (expArray[i] === ')') {
-             bracketsAmount -= 1;
-             expArray.splice(i, 1);
-         } else {
-             valid = false;
-         }
+function arrayExp(exp) {
+    let possibleActions = ['*', '+', '-', '/'];
+    let arr = [];
+    let possibleNumber;
+    let extraBrackets, extraElm, valueErr = false;
+    exp = exp.replace(/ +/g, ' ');
+    while (exp) {
+        exp = exp.trim();
+        if (possibleActions.includes(exp.charAt(0))) {
+            extraElm += 1;
+            arr.push(exp.charAt(0));
+            exp = exp.substring(1);
+        } else if (!isNaN(exp.charAt(0))) {
+            possibleNumber = exp.split(/[-\/*+\s()]/, 1)[0];
+            isNaN(possibleNumber) ? valueErr = true : (
+                arr.push(possibleNumber),
+                extraElm -=1
+            );
+            exp = exp.substring(possibleNumber.length);
+        } else if (exp.charAt(0) === '(' || exp.charAt(0) === ')') {
+            exp.charAt(0) === '(' ? extraBrackets += 1 : extraBrackets -= 1;
+            exp = exp.substring(1);
+        } else {
+            valueErr = true;
+        }
     }
-    if ((operandsAmount - 1) !== operatorsAmount || bracketsAmount !== 0) {
-        valid = false;
+    if (extraBrackets || (extraElm + 1) || valueErr) {
+        arr = [];
     }
-    return valid;
+    return arr;
 }
 
 function makeCalc(usableArray, signIndex) {
+    let possibleActions = ['*', '/', '+', '-'];
     let leftVal, rightVal, sign, value, result;
     sign = usableArray[signIndex];
     leftVal = usableArray[signIndex + 1];
@@ -64,14 +67,15 @@ function makeCalc(usableArray, signIndex) {
     }
     value = makeSimpleCalc(sign, leftVal, rightVal);
     signIndex += 1;
+    if (signIndex)
     return [value, signIndex];
 }
 
 function calc(expression) {
     let expressionArray;
 
-    expressionArray = expression.trim().split(' ');
-    if (!validateExp(expressionArray)) {
+    expressionArray = arrayExp(expression)
+    if (!expressionArray.length) {
         return 'Wrong Expression';
     } else {
         console.log(makeCalc(expressionArray, 0)[0])
@@ -79,6 +83,5 @@ function calc(expression) {
     }
 }
 
-calc('/ * ( - 2 32 ) 7 121 ');
 
 
