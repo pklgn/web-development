@@ -17,16 +17,18 @@ function isPrime(number) {
     }
 }
 
+function getAnswer(inputParameter) {
+    typeof inputParameter !== 'number' ? console.log(`'${inputParameter}' is not a number`) :
+        isPrime(inputParameter);
+}
 
 function isPrimeNumber(inputParameter) {
     if (inputParameter instanceof Array) {
         for (let i = 0; i < inputParameter.length; i++) {
-            isNaN(inputParameter[i]) ? console.log(`${inputParameter[i]} is not a number`) :
-                isPrime(inputParameter[i]);
+            getAnswer(inputParameter[i]);
         }
     } else {
-        isNaN(inputParameter) ? console.log(`${inputParameter} is not a number`) :
-             isPrime(inputParameter);
+        getAnswer(inputParameter);
     }
     return true;
 }
