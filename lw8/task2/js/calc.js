@@ -100,11 +100,7 @@ function calc(inputExp) {
         if (isNaN(answer)) {
             console.log('Wrong expression');
         } else {
-            if (expressionArray.length) {
-                console.log('Wrong expression');
-            } else {
-                console.log(answer);
-            }
+            console.log(answer);
         }
     } else {
         console.log('There are extra or wrong values in the expression ');
