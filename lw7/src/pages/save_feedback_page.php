@@ -1,61 +1,84 @@
 <?php
 
-require_once "../utils/request.php";
-require_once "../utils/template.php";
-
-function removeExtraBlanksFrom($value): string
+function removeExtraBlanksFrom(string $value): string
 {
     $value = trim($value);
     preg_replace('/\s+/', ' ', $value);
     return $value;
 }
 
-
-function saveFeedbackPage()
+function setEmptyValErr(string $value, array &$errorArr): void
 {
-    $name = getPostParameter('name');
-    $email = getPostParameter('email');
-    $message = getPostParameter('message');
+    $errorArr['valid'] = false;
+    $errorArr["{$value}_error_msg"] = ucwords($value) . " cannot be empty";
+}
+
+function setWrongValErr(string $value, array &$errorArr): void
+{
+    $errorArr['valid'] = false;
+    $errorArr["{$value}_error_msg"] = ucwords($value) . " has a wrong format";
+}
+
+function saveDataIntoFile(array $data): void
+{
+    $fileName = strtolower($data['email']);
+    $path = __DIR__ . "\..\..\data\\$fileName.txt";
+    $file = fopen($path, 'w');
+    foreach ($data as $name => $value)
+    {
+        fwrite($file, "$name: $value" . PHP_EOL);
+    }
+    fclose($file);
+}
+
+function saveFeedbackPage(): void
+{
+    $name = trim(getPostParameter('name'));
+    $email = trim(getPostParameter('email'));
+    $message = removeExtraBlanksFrom(getPostParameter('message'));
     $gender = getPostParameter('gender');
     $country = getPostParameter('country');
-    $errors = [];
-    $legalValues = [];
     $nameTemplate = '/^([а-яА-ЯЁёa-zA-Z]+)$/u';
+    $response['valid'] = true;
 
-
-    $message = removeExtraBlanksFrom($message);
-    if (!isset($name))
-    {
-        $errors['name_error_msg'] = 'Отсутствует имя';
-    }
-    elseif (!preg_match($nameTemplate, $name))
-    {
-        $name = removeExtraBlanksFrom($name);
-        $errors['name_error_msg'] = 'Неверно набранное имя';
+    if (empty($name)) {
+        setEmptyValErr('name', $response);
+    } else if (!preg_match($nameTemplate, $name)) {
+        setWrongValErr('name', $response);
+    } else {
+        $response['name'] = $name;
     }
 
-    if (!isset($email))
-    {
-        $errors['email_error_msg'] = 'Отсутствует электронная почта';
-    }
-    else if (!filter_var($email, FILTER_VALIDATE_EMAIL))
-    {
-        $email = trim($email);
-        $errors['email_error_msg'] = 'Неверно набранная электронная почта';
+    if (empty($email)) {
+        setEmptyValErr('email', $response);
+    } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        setWrongValErr('email', $response);
+    } else {
+        $response['email'] = $email;
     }
 
-    if (!isset($message))
+    if (!empty($gender))
     {
-        $errors['message_error_msg'] = "Отсутствует сообщение";
-    }
-    else
-    {
-        $message = removeExtraBlanksFrom($message);
+        $response['gender'] = $gender;
     }
 
-    if (count($errors))
+    if (!empty($country))
     {
-        renderTemplate("main.tpl.php", $errors);
+        $response['country'] = $country;
+    }
+
+    if (empty($message)) {
+        setEmptyValErr('message', $response);
+    } else {
+        $message = str_replace("\r\n", "<br />", $message);
+        $response['message'] = $message;
+    }
+
+    renderTemplate("main.tpl.php", $response);
+    if ($response['valid'] === true)
+    {
+        unset($response['valid']);
+        saveDataIntoFile($response);
     }
 }
 
