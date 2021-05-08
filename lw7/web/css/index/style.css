@@ -31,7 +31,7 @@
 {
     font: 300 30px/42px Open Sans;
     box-sizing: content-box;
-    padding: 0px 25px;
+    padding: 0 25px;
 }
 
 .form
@@ -124,7 +124,7 @@
     color: #555;
     border-radius: 3px;
     border: 2px solid #a6a6a6;
-    background: url(../images/arrow_down.png) no-repeat right center;
+    background: url(../../images/arrow_down.png) no-repeat right center;
     background-position-x: 97%;
     cursor: pointer;
 }
@@ -146,12 +146,15 @@
 {
     margin-top: 4px;
     margin-left: -1px;
-    margin-right: 0px;
+    margin-right: 0;
+    appearance: none;
     border: none;
     min-width: 17px;
     min-height: 17px;
     outline: none;
     cursor: pointer;
+    background: url(../../images/radio.png) left center no-repeat;
+    background-size: 17px;
 }
 
 .label_radio::after
@@ -169,7 +172,7 @@
 
 .form__gender-item:checked
 {
-    background: url(../images/radio_checked.png) left center no-repeat;
+    background: url(../../images/radio_checked.png) left center no-repeat;
 }
 
 .form__gender-item-info
@@ -254,8 +257,7 @@
 {
     font: 400 18px/32px "Open Sans";
     box-sizing: border-box;
-    padding-left: 20px;
-    padding-top: 10px;
+    padding: 10px 20px;
     min-height: 150px;
     min-width: 100%;
     resize: none;
@@ -302,14 +304,13 @@
     .form-title__line
     {
         width: 200px;
-        size: 1px;
         padding-left: 10px;
     }
     .form-title__text
     {
         font: 300 36px/42px Open Sans;
         box-sizing: content-box;
-        padding: 0px 25px;
+        padding: 0 25px;
         flex-shrink: 0;
     }
 
@@ -336,7 +337,7 @@
     {
         font: 300 36px/42px Open Sans;
         box-sizing: content-box;
-        padding: 0px 25px;
+        padding: 0 25px;
     }
 
     .form__field
