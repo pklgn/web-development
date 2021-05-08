@@ -5,7 +5,7 @@ function makeSimpleCalc(sign, leftOperand, rightOperand) {
             result = leftOperand * rightOperand;
             break;
         case '+':
-            result = +leftOperand + +rightOperand;
+            result = leftOperand + rightOperand;
             break;
         case '-':
             result = leftOperand - rightOperand;
@@ -16,86 +16,85 @@ function makeSimpleCalc(sign, leftOperand, rightOperand) {
         default:
             result = undefined;
     }
+
     return result;
 }
 
-function arrayExp(exp) {
-    let possibleActions = ['*', '+', '-', '/'];
-    let brackets = ['(', ')'];
-    let arr = [];
-    let possibleNumber;
-    let extraElm = true;
-    let valueErr = false;
-    let extraBrackets = false;
+const POSSIBLE_ACTIONS = ['*', '+', '-', '/'];
+const BRACKETS = ['(', ')'];
+
+function accountVal(val, exp, result) {
+    result.push(val);
+
+    return exp.slice(String(val).length);
+}
+
+function getArrayExp(exp) {
+    let resultArr = [];
     let currentSymbol;
-    while (exp) {
+    let possibleNumber;
+    let valueErr = false;
+    let extraElm = true;
+    let extraBrackets = false;
+    while (exp && !valueErr) {
         exp = exp.trim();
         currentSymbol = exp.charAt(0);
-        if (possibleActions.includes(currentSymbol)) {
+        if (POSSIBLE_ACTIONS.includes(currentSymbol)) {
             extraElm += 1;
-            arr.push(currentSymbol);
-            exp = exp.slice(1);
+            exp = accountVal(currentSymbol, exp, resultArr);
         } else if (!isNaN(currentSymbol)) {
             possibleNumber = exp.split(/[-\/*+\s()]/, 1)[0];
-            isNaN(possibleNumber) ? valueErr = true : (
-                arr.push(+possibleNumber),
-                    extraElm -=1
-            );
-            exp = exp.slice(possibleNumber.length);
-        } else if (brackets.includes(currentSymbol)) {
-            brackets.indexOf(currentSymbol) >= (brackets.length / 2) ? extraBrackets += 1 : extraBrackets -= 1;
-            arr.push(currentSymbol);
-            exp = exp.substring(1);
+            extraElm -=1
+            isNaN(possibleNumber) ? valueErr = true : exp = accountVal(+possibleNumber, exp, resultArr);
+        } else if (BRACKETS.includes(currentSymbol)) {
+            BRACKETS.indexOf(currentSymbol) >= (BRACKETS.length / 2) ? extraBrackets -= 1 : extraBrackets += 1;
+            exp = accountVal(currentSymbol, exp, resultArr);
         } else {
             valueErr = true;
-            exp = exp.slice(1);
         }
     }
     if (extraBrackets || extraElm || valueErr) {
-        arr = [];
+        resultArr = [];
     }
-    return arr;
+
+    return resultArr;
+}
+
+function getValFrom(usableArray) {
+    let val;
+    if (POSSIBLE_ACTIONS.includes(usableArray[0]) || BRACKETS.includes(usableArray[0])) {
+        val = makeCalc(usableArray);
+    } else {
+        val = usableArray.splice(0, 1)[0];
+    }
+
+    return val;
 }
 
 function makeCalc(usableArray) {
-    let possibleActions = ['*', '/', '+', '-'];
-    let brackets = ['(', ')'];
-    let leftVal, rightVal, operator, expVal;
+    let leftVal, rightVal, result, operator;
     let intoBrackets = false;
     operator = usableArray.splice(0, 1)[0];
-    if (!possibleActions.includes(operator)) {
-        if (operator === '(') {
-            intoBrackets = true;
-            operator = usableArray.splice(0, 1)[0];
-        } else {
-            operator = undefined;
-        }
+    if (operator === '(') {
+        intoBrackets = true;
+        operator = usableArray.splice(0, 1)[0];
     }
-    leftVal = usableArray[0];
-    if (possibleActions.includes(leftVal) || brackets.includes(leftVal)) {
-        leftVal = makeCalc(usableArray);
-    } else {
-        usableArray.splice(0, 1);
-    }
-    rightVal = usableArray[0];
-    if (possibleActions.includes(rightVal) || brackets.includes(rightVal)) {
-        rightVal = makeCalc(usableArray);
-    } else {
-        usableArray.splice(0, 1);
-    }
-    expVal = makeSimpleCalc(operator, leftVal, rightVal);
+    leftVal = getValFrom(usableArray);
+    rightVal = getValFrom(usableArray);
+    result = makeSimpleCalc(operator, leftVal, rightVal);
     if (usableArray[0] === ')' && intoBrackets) {
         usableArray.splice(0, 1);
     } else if (intoBrackets) {
-        expVal = undefined;
+        result = undefined;
     }
-    return expVal;
+
+    return result;
 }
 
 function calc(inputExp) {
     let expressionArray;
     let answer = null;
-    expressionArray = arrayExp(inputExp);
+    expressionArray = getArrayExp(inputExp);
     if (expressionArray.length) {
         answer = makeCalc(expressionArray);
         if (isNaN(answer)) {
@@ -110,5 +109,8 @@ function calc(inputExp) {
     } else {
         console.log('There are extra or wrong values in the expression ');
     }
+
     return answer;
 }
+
+calc('* 2 3');
