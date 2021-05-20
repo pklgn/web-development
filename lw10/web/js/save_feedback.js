@@ -1,6 +1,4 @@
 const checkingURL = "../../src/pages/save_feedback_page.php";
-const reqFields = document.getElementsByClassName('required');
-const successMsg = document.getElementById('verified-wrapper');
 
 async function getCheck(data) {
     const response = await fetch(checkingURL, {
@@ -10,6 +8,7 @@ async function getCheck(data) {
         },
         body: JSON.stringify(data),
     })
+
     return await response.json();
 }
 
@@ -23,31 +22,32 @@ function collectData() {
     };
 }
 
-function chooseFieldType(error, field, fieldName) {
+function chooseFieldObject(error, field, fieldFor) {
     let fieldInput;
     field.lastElementChild.textContent = `This field cannot be ${error}`;
-    if (fieldName !== 'message') {
+    if (fieldFor !== 'message') {
         fieldInput = field.getElementsByTagName("input")[0];
     }
     else {
         fieldInput = field.getElementsByTagName("textarea")[0];
     }
+
     return fieldInput
 }
 
 function toggleErrors(reqFields, data) {
-    let result, field, fieldName;
+    let errorValue, field, fieldFor;
     for (field of reqFields) {
         let fieldLabel = field.getElementsByTagName("label")[0];
-        fieldName = fieldLabel.getAttribute('for');
-        result = data[`${fieldName}_error_msg`] ?? '';
-        if (result) {
-            let fieldArea = chooseFieldType(result, field, fieldName);
+        fieldFor = fieldLabel.getAttribute('for');
+        errorValue = data[`${fieldFor}_error_msg`] ?? '';
+        if (errorValue) {
+            let fieldArea = chooseFieldObject(errorValue, field, fieldFor);
             fieldArea.classList.add('error');
-            field.lastElementChild.textContent = `This field cannot be ${result}`;
+            field.lastElementChild.textContent = `This field cannot be ${errorValue}`;
         }
         else {
-            let fieldArea = chooseFieldType(result, field, fieldName);
+            let fieldArea = chooseFieldObject(errorValue, field, fieldFor);
             fieldArea.classList.remove('error');
             field.lastElementChild.textContent = '';
         }
@@ -56,7 +56,8 @@ function toggleErrors(reqFields, data) {
 
 function toggleSuccessMsg(data) {
     let el;
-    let successEls = successMsg.getElementsByClassName('verified')
+    const successMsg = document.getElementById('verified-wrapper');
+    let successEls = successMsg.getElementsByClassName('verified');
     if (data['valid'] === false) {
         for (el of successEls) {
             el.style.display = 'none';
@@ -68,11 +69,18 @@ function toggleSuccessMsg(data) {
     }
 }
 
-async function sendData() {
+async function sendData(event) {
+    event.preventDefault();
     let data = collectData();
     let responseData = await getCheck(data);
+    const reqFields = document.getElementsByClassName('required');
     toggleErrors(reqFields, responseData);
     toggleSuccessMsg(responseData);
 }
 
+function save_feedback() {
+    const form = document.getElementById('simple_form');
+    form.addEventListener('submit', sendData);
+}
 
+window.addEventListener('load', save_feedback);

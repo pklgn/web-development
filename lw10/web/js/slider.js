@@ -122,7 +122,7 @@ function getFirstSlideIndex() {
     return translatesX.indexOf(0);
 }
 
-function run() {
+function slider() {
     const nextBtn = document.getElementById('next-btn');
     const prevBtn = document.getElementById('prev-btn');
 
@@ -130,4 +130,4 @@ function run() {
     prevBtn.addEventListener("click", prevSlide);
 }
 
-window.onload = run;
+window.addEventListener('load', slider);
