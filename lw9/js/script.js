@@ -2,51 +2,86 @@ const films = document.getElementsByClassName('films-list__item');
 const slidesCount = films.length;
 const slideWidthPx = 305;
 const visibleFilmsCount = 4;
+const animationDuration = 300;
+const animationFunction = "ease-in-out";
 
 function getTranslateX(film) {
     let style = window.getComputedStyle(film);
     let matrix = new WebKitCSSMatrix(style.transform);
+
     return matrix.m41;
 }
 
 function setRightEdge(films) {
     let nextLast;
-    let delta;
     nextLast = getNextLastSlideIndex();
-    delta = slideWidthPx*(visibleFilmsCount - nextLast);
-    films[nextLast].classList.add('first-film');
+    let delta = slideWidthPx * (visibleFilmsCount - nextLast);
     films[nextLast].style.transform = `translateX(${delta}px)`;
-    let triggerLayout = films[nextLast].offsetHeight;
-    films[nextLast].classList.remove('first-film');
+}
+
+function collectViewFilmsIndexes() {
+    let i;
+    let viewFilms = [];
+    let nextLast = getNextLastSlideIndex();
+    let nextFirst = getNextFirstSlideIndex();
+    if (nextFirst < nextLast) {
+        for (i = nextFirst; i <= nextLast; i++) {
+            viewFilms.push(i);
+        }
+    } else {
+        for (i = nextFirst; i < slidesCount; i++) {
+            viewFilms.push(i);
+        }
+        for (i = 0; i <= nextLast; i++) {
+            viewFilms.push(i);
+        }
+    }
+
+    return viewFilms;
 }
 
 function setLeftEdge(films) {
     let nextFirst;
     nextFirst = getNextFirstSlideIndex();
-    let delta = slideWidthPx*(-nextFirst - 1);
-    films[nextFirst].classList.add('last-film');
+    let delta = slideWidthPx * (-nextFirst - 1);
     films[nextFirst].style.transform = `translateX(${delta}px)`;
-    let triggerLayout = films[nextFirst].offsetHeight;
-    films[nextFirst].classList.remove('last-film');
 }
 
-function prevSlide()
-{
+function prevSlide() {
+    let currTranslateX;
+    let currFilmsIndexes = collectViewFilmsIndexes();
     setLeftEdge(films);
-    let film, currTranslateX;
-    for (film of films) {
-        currTranslateX = getTranslateX(film);
-        film.style.transform = `translateX(${slideWidthPx + currTranslateX}px)`;
+    for (let i = 0; i < slidesCount; i++) {
+        if (currFilmsIndexes.includes(i)) {
+            currTranslateX = getTranslateX(films[i]);
+            films[i].animate([
+                {transform: `translateX(${currTranslateX}px)`},
+                {transform: `translateX(${slideWidthPx + currTranslateX}px)`},
+            ], {
+                duration: animationDuration,
+                easing: animationFunction,
+            });
+            films[i].style.transform = `translateX(${slideWidthPx + currTranslateX}px)`;
+        }
     }
 }
 
-function nextSlide()
-{
+function nextSlide() {
+    let currFilmsIndexes = collectViewFilmsIndexes();
     setRightEdge(films);
-    let film, currTranslateX;
-    for (film of films) {
-        currTranslateX = getTranslateX(film);
-        film.style.transform = `translateX(${-slideWidthPx + currTranslateX}px)`;
+    let currTranslateX;
+    for (let i = 0; i < slidesCount; i++) {
+        if (currFilmsIndexes.includes(i)) {
+            currTranslateX = getTranslateX(films[i]);
+            films[i].animate([
+                    {transform: `translateX(${currTranslateX}px)`},
+                    {transform: `translateX(${-slideWidthPx + currTranslateX}px)`},
+                ], {
+                duration: animationDuration,
+                easing: animationFunction,
+            });
+            films[i].style.transform = `translateX(${-slideWidthPx + currTranslateX}px)`;
+        }
     }
 }
 
@@ -58,6 +93,7 @@ function getFilmsTranslates() {
         translates.push(currFilmOffset + getTranslateX(film));
         currFilmOffset += slideWidthPx;
     }
+
     return translates;
 }
 
@@ -66,6 +102,7 @@ function getNextFirstSlideIndex() {
     if (curr < 0) {
         curr = slidesCount + curr
     }
+
     return curr;
 }
 
@@ -75,11 +112,13 @@ function getNextLastSlideIndex() {
 
 function getLastSlideIndex() {
     let firstSlide = getFirstSlideIndex();
+
     return (firstSlide + visibleFilmsCount - 1) % slidesCount;
 }
 
 function getFirstSlideIndex() {
     let translatesX = getFilmsTranslates();
+
     return translatesX.indexOf(0);
 }
 
