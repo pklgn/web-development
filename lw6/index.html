@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <title>Profile Page</title>
-    <link href="css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" />
 </head>
 
 <body class="page">
@@ -16,15 +16,15 @@
         <div class="header__container">
             <nav class="menu">
                 <ul class="menu__list">
-                    <li class="menu__item_highlighted">
-                        <a class="menu__link_highlighted" href="#">
-                            <img class="icon-img" src="images/about_me_icon.svg" alt="icon" />
+                    <li class="menu__item">
+                        <a class="menu__link" href="#">
+                            <img class="icon-img" src="images/about_me_svg.svg" alt="icon" />
                             <div class="menu__text">Обо мне</div>
                         </a>
                     </li>
                     <li class="menu__item">
                         <a class="menu__link" href="#">
-                            <img class="icon-img" src="images/hobby_icon.svg" alt="icon" />
+                            <img class="icon-img icon-img_downshifted" src="images/hobby_icon.svg" alt="icon" />
                             <div class="menu__text">Мое хобби</div>
                         </a>
                     </li>
@@ -224,12 +224,12 @@
                         </select>
                     </li>
                     <li class="form__radio">
-                        <label class="label label_radio" for="">Ваш пол</label>
+                        <div class="label label_radio">Ваш пол</div>
                         <div class="form__radio-wrapper">
                             <input class="form__gender-item" type="radio" id="male" name="gender" value="male">
                             <label class="form__gender-item-info" for="male">Мужской</label>
                             <input class="form__gender-item" type="radio" id="female" name="gender" value="female">
-                            <label class="form__gender-item-info" for="female">Женский</label>    
+                            <label class="form__gender-item-info" for="female">Женский</label>
                         </div>
                     </li>
                     <li class="form__textarea">
