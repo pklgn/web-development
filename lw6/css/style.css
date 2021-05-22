@@ -387,7 +387,7 @@
     margin-top: 17px;
     line-height: 28px;
     color: #555;
-    font-family: "Georgia";
+    font-family: "Georgia", serif;
     padding: 0 1px;
 }
 
@@ -458,7 +458,7 @@
 {
     font: 300 30px/42px Open Sans;
     box-sizing: content-box;
-    padding: 0px 25px;
+    padding: 0 25px;
 }
 
 .form
@@ -552,7 +552,7 @@
     border-radius: 3px;
     border: 2px solid #a6a6a6;
     background: url(../images/arrow_down.png) no-repeat right center;
-    background-position-x: 97%;
+    background-origin: content-box;
     cursor: pointer;
 }
 
@@ -586,7 +586,7 @@
 {
     margin-top: 4px;
     margin-left: -1px;
-    margin-right: 0px;
+    margin-right: 0;
     appearance: none;
     border: none;
     min-width: 17px;
@@ -745,7 +745,7 @@
     {
         font: 300 36px/42px Open Sans;
         box-sizing: content-box;
-        padding: 0px 25px;
+        padding: 0 25px;
         flex-shrink: 0;
     }
 
@@ -998,7 +998,7 @@
     {
         font: 300 36px/42px Open Sans;
         box-sizing: content-box;
-        padding: 0px 25px;
+        padding: 0 25px;
     }
 
     .form__field
