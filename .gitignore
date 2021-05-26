@@ -3,4 +3,5 @@
 /lw3/SurveySaver/data/*.txt
 /lw3/SurveySaver/t*.php
 /lw5/t*.html
-/lw?/.idea
+/lw*/.idea
+/lw*_/
