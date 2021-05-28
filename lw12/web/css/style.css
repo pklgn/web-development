@@ -1,0 +1,366 @@
+.form-wrapper
+{
+    margin: 45px auto 0 auto;
+    padding: 0 20px;
+    max-width: 570px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 28px;
+    line-height: 42px;
+}
+
+.form-title
+{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.form-title__line
+{
+    min-width: 200px;
+    size: 1px;
+    padding-left: 10px;
+}
+
+.form-title__text
+{
+    font: 300 30px/42px Open Sans;
+    box-sizing: content-box;
+    padding: 0px 25px;
+}
+
+.form
+{
+    max-width: 540px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.form__list
+{
+    list-style-type: none;
+    padding-inline-start: 0;
+}
+
+.form__item
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.form__select-name
+{
+    font: 400 20px/32px "Open Sans";
+    color: #333;
+}
+
+.label
+{
+    font: 400 20px/32px "Open Sans";
+    margin-bottom: 3px;
+    color: #333;
+}
+
+.label::after
+{
+    content: " *";
+    color: red;
+}
+
+.label_email
+{
+    margin-top: 24px;
+}
+
+.form__select
+{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.label_select::after
+{
+    content: "";
+}
+
+.form__field
+{
+    border: 2px solid #c9c9c9;
+    min-height: 50px;
+    padding-left: 20px;
+    border-radius: 3px;
+    font: 400 18px/32px "Open Sans";
+}
+
+.form__field:focus
+{
+    outline: none;
+    border: 2px solid #15a98c;
+}
+
+.form__field:active
+{
+    outline: none;
+    border: 2px solid #15a98c;
+}
+
+.form__select-country
+{
+    font: 400 18px/32px "Open Sans";
+    margin-top: 4px;
+    box-sizing: border-box;
+    appearance: none;
+    padding: 0 16px;
+    min-height: 50px;
+    max-width: 540px;
+    color: #555;
+    border-radius: 3px;
+    border: 2px solid #a6a6a6;
+    background: url(../images/arrow_down.png) no-repeat right center;
+    background-position-x: 97%;
+    cursor: pointer;
+}
+
+.form__select-country:focus
+{
+    outline: none;
+    border: 2px solid #15a98c;
+}
+
+.form__radio
+{
+    font: 400 20px/32px "Open Sans";
+    margin-top: 41px;
+    color: #333;
+}
+
+.form__gender-item
+{
+    margin-top: 4px;
+    margin-left: -1px;
+    margin-right: 0px;
+    border: none;
+    min-width: 17px;
+    min-height: 17px;
+    outline: none;
+    cursor: pointer;
+}
+
+.label_radio::after
+{
+    content: "";
+}
+
+.form__radio-wrapper
+{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.form__gender-item:checked
+{
+    background: url(../images/radio_checked.png) left center no-repeat;
+}
+
+.form__gender-item-info
+{
+    font: 400 18px/40px "Open Sans";
+    color: #333;
+    padding-left: 5px;
+    margin-right: 41px;
+}
+
+
+.submit-container__button
+{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 12px;
+}
+
+.submit-container__button-link
+{
+    font: 19px/32px "Georgia";
+    appearance: none;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 220px;
+    min-height: 50px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #15a98c;
+    color: #f5f5f5;
+}
+
+.verified-wrapper
+{
+    height: 100%;
+    display: flex;
+    align-self: center;
+    margin-left: 30px;
+}
+
+.verified-text
+{
+    max-width: 150px;
+    font-family: Roboto, serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #2E2B2B;
+    margin-left: 10px;
+}
+
+.verified-img
+{
+    max-width: 27px;
+}
+
+
+.label_textarea
+{
+    line-height: 36px;
+}
+
+.form__textarea
+{
+    margin-top: 22px;
+}
+
+.form__textarea-title
+{
+    font: 400 20px/32px "Open Sans";
+    color: #333;
+}
+
+
+.form__textarea-field
+{
+    font: 400 18px/32px "Open Sans";
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-top: 10px;
+    min-height: 150px;
+    min-width: 100%;
+    resize: none;
+    color: #555;
+    border-radius: 3px;
+    border: 2px solid #c9c9c9;
+    cursor: text;
+}
+
+.form__textarea-field:active
+{
+    outline: none;
+    border: 2px solid #15a98c;
+}
+
+.form__textarea-field:focus
+{
+    outline: none;
+    border: 2px solid #15a98c;
+}
+
+
+.submit-container__button-link:active
+{
+    background-color: #098d71; /* Цвет кнопки при нажатии */
+}
+.submit-container__button-link:hover
+{
+    background-color: #098d71; /* Цвет кнопки при наведении курсора */
+}
+
+@media screen and (min-width: 768px)
+{
+    .form-title
+    {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        padding-right: 9px;
+    }
+
+
+    .form-title__line
+    {
+        width: 200px;
+        size: 1px;
+        padding-left: 10px;
+    }
+    .form-title__text
+    {
+        font: 300 36px/42px Open Sans;
+        box-sizing: content-box;
+        padding: 0px 25px;
+        flex-shrink: 0;
+    }
+
+    .form-wrapper
+    {
+        max-width: 1000px;
+    }
+
+    .short-info
+    {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+@media screen and (min-width: 1024px)
+{
+    .form-wrapper
+    {
+        font-size: 36px;
+    }
+
+    .form-title__text
+    {
+        font: 300 36px/42px Open Sans;
+        box-sizing: content-box;
+        padding: 0px 25px;
+    }
+
+    .form__field
+    {
+        max-height: 50px;
+        min-height: 50px;
+        box-sizing: border-box;
+    }
+
+    .form__select
+    {
+        margin-top: 25px;
+    }
+
+    .form__select-country
+    {
+        margin-top: 1px;
+    }
+
+}
+
+.error
+{
+    color: red;
+    font: 400 16px "Open Sans";
+    margin: 5px auto 0 0;
+}
