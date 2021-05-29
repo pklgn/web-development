@@ -19,18 +19,6 @@ function setWrongValErr(string $value, array &$errorArr): void
     $errorArr["{$value}_error_msg"] = ucwords($value) . " has a wrong format";
 }
 
-function saveDataIntoFile(array $data): void
-{
-    $fileName = strtolower($data['email']);
-    $path = __DIR__ . "\..\..\data\\$fileName.txt";
-    $file = fopen($path, 'w');
-    foreach ($data as $name => $value)
-    {
-        fwrite($file, "$name: $value" . PHP_EOL);
-    }
-    fclose($file);
-}
-
 function saveFeedbackPage(): void
 {
     $name = trim(getPostParameter('name'));
@@ -74,13 +62,12 @@ function saveFeedbackPage(): void
         $response['message'] = $message;
     }
 
+    renderTemplate("main.tpl.php", $response);
     if ($response['valid'] === true)
     {
         unset($response['valid']);
         saveFeedback($response);
     }
-
-    renderTemplate("main.tpl.php", $response);
 }
 
 

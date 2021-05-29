@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <link href="../../web/css/index/style.css" rel="stylesheet"/>
+    <link href="/css/index/style.css" rel="stylesheet"/>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
     <title>Survey</title>
@@ -69,7 +69,7 @@
             <?php if (isset($args['valid']) && $args['valid']): ?>
                 <div class="verified-wrapper">
                     <div class="verified-img-wrapper">
-                        <img class="verified-img" src="../../web/images/verify.png" alt="verified" title="verified"/>
+                        <img class="verified-img" src="/images/verify.png" alt="verified" title="verified"/>
                     </div>
                     <div class="verified-text">
                         Ваше сообщение успешно отправлено
