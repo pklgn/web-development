@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>First</title>
+</head>
+<body>
+<canvas width="300px" height="400px" id="first"></canvas>
+<script>
+    function fillRoundedRect(color, ctx, x, y, w, h, r) {
+        ctx.beginPath();
+        ctx.fillStyle = color;
+        ctx.arcTo(x + w, y, x + w, y + (h / 2), r);
+        ctx.arcTo(x + w, y + h, x + (w / 2), y + h, r);
+        ctx.arcTo(x, y + h, x, y + (h / 2), r);
+        ctx.arcTo(x, y, x + (w / 2), y, r);
+        ctx.closePath();
+        ctx.fill();
+    }
+
+    const p = Math.PI;
+    window.onload = () => {
+
+        const canvas = document.getElementById('first');
+        const ctx = canvas.getContext('2d');
+
+        const colorDetails = '#fd1c43';
+        const colorBasics = '#3e76c7';
+
+
+        //pants
+        ctx.beginPath()
+        ctx.fillStyle = colorBasics;
+        ctx.fillRect(70, 290, 120, 30);
+
+
+        //shoes
+        ctx.beginPath();
+        ctx.moveTo(60, 320);
+        ctx.fillStyle = 'black'
+        ctx.quadraticCurveTo(105, 305, 130, 320);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.moveTo(130, 320);
+        ctx.fillStyle = 'black'
+        ctx.quadraticCurveTo(160, 305, 200, 320);
+        ctx.fill();
+
+        //arms
+        ctx.beginPath();
+        ctx.fillStyle = '#ce6b5e';
+        ctx.ellipse(70, 220, 60, 20, -p/2.6, 0, 2*p);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.ellipse(175, 217, 60, 20, p/2.9, 0, 2*p);
+        ctx.fill();
+
+        //body
+        ctx.beginPath();
+        ctx.moveTo(60, 290);
+        ctx.fillStyle = '#ce6b5e';
+        ctx.quadraticCurveTo(125, 305, 195, 290);
+        ctx.lineTo(160, 150);
+        ctx.lineTo(60, 200);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(127, 225);
+        ctx.lineTo(127, 297);
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = '1'
+        ctx.stroke();
+
+        //arm shadows
+        ctx.beginPath();
+        ctx.moveTo(65, 270);
+        ctx.lineTo(75, 237);
+        ctx.strokeStyle = 'black';
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(185, 270);
+        ctx.lineTo(175, 235);
+        ctx.strokeStyle = 'black';
+        ctx.stroke();
+
+        //collar
+        ctx.beginPath();
+        ctx.ellipse(97, 210, 35, 10, p/7, 0, 2*p);
+        ctx.fillStyle = colorDetails;
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = '0.3'
+        ctx.fill();
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.ellipse(155, 212, 30, 10, -p/7, 0, 2*p);
+        ctx.fill();
+        ctx.stroke();
+
+        //buttons
+        ctx.beginPath();
+        ctx.fillStyle = 'black';
+        ctx.arc(117, 235, 2, 0, 2*p);
+        ctx.arc(117, 257, 2, 0, 2*p);
+        ctx.arc(117, 280, 2, 0, 2*p);
+        ctx.fill()
+
+        //hands
+        //left hand
+        ctx.beginPath();
+        ctx.arc(55, 267, 18, 0, 2*p);
+        ctx.fillStyle = colorDetails;
+        ctx.fill();
+        ctx.beginPath();
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = '0.2';
+        ctx.arc(67, 260, 7, 0, 2*p);
+        ctx.fill();
+        ctx.stroke();
+
+        //right hand
+        ctx.beginPath();
+        ctx.arc(195, 272, 18, 0, 2*p);
+        ctx.fillStyle = colorDetails;
+        ctx.fill();
+        ctx.beginPath();
+        ctx.strokeStyle = 'black';
+        ctx.lineWidth = '0.2';
+        ctx.arc(183, 265, 7, 0, 2*p);
+        ctx.fill();
+        ctx.stroke();
+
+        //head
+        ctx.beginPath();
+        ctx.fillStyle = '#ffecc2';
+        ctx.arc(125, 125, 90, 0, 2 * p);
+        ctx.fill();
+
+        //blue hat
+        ctx.beginPath();
+        ctx.fillStyle = colorBasics;
+        ctx.arc(125, 125, 90, 13 * p / 12, 23 * p / 12)
+        ctx.fill();
+
+        //red hat edge
+        ctx.beginPath();
+        ctx.fillStyle = colorDetails;
+        ctx.moveTo(30, 105);
+        ctx.lineTo(30, 125);
+        ctx.quadraticCurveTo(125, 85, 220, 120);
+        ctx.lineTo(220, 100);
+        ctx.quadraticCurveTo(125, 65, 30, 105);
+        ctx.fill();
+
+        //eyes
+        ctx.beginPath();
+        ctx.fillStyle = 'white';
+        ctx.ellipse(100, 135, 30, 25, -p / 3, 0, 2 * p);
+
+        //pupils
+        ctx.fill();
+        ctx.beginPath();
+        ctx.ellipse(150, 135, 30, 25, p / 3, 0, 2 * p);
+        ctx.fill();
+        ctx.beginPath()
+        ctx.fillStyle = 'black';
+        ctx.arc(110, 135, 3, 0, 2 * p);
+        ctx.fill();
+        ctx.beginPath()
+        ctx.arc(140, 135, 3, 0, 2 * p);
+        ctx.fill();
+
+        //eyes emotions
+        ctx.beginPath();
+        ctx.moveTo(65, 115);
+        ctx.lineWidth = '3';
+        ctx.lineTo(85, 95);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(180, 112);
+        ctx.lineTo(160, 95);
+        ctx.stroke();
+
+        //mouse
+        ctx.beginPath();
+        ctx.moveTo(105, 180);
+        ctx.lineTo(130, 200);
+        ctx.lineTo(135, 195);
+        ctx.lineTo(155, 180);
+        ctx.closePath();
+        ctx.fill();
+
+        //teeth
+        ctx.beginPath();
+        ctx.moveTo(115, 181);
+        ctx.strokeStyle = 'white';
+        ctx.fillStyle = 'white';
+        //left teeth
+        ctx.lineTo(112, 181);
+        ctx.lineTo(116, 186);
+        ctx.lineTo(123, 186);
+        ctx.lineTo(123, 181);
+        ctx.lineTo(114, 181);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.fillRect(125, 181, 7, 5);
+        ctx.beginPath();
+        ctx.fillRect(134, 181, 7, 5);
+
+        ctx.beginPath();
+        ctx.moveTo(143, 181);
+        ctx.lineTo(143, 186);
+        ctx.lineTo(146, 186);
+        ctx.lineTo(151, 181)
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.translate(125, 35);
+        ctx.rotate(1 / 3);
+        fillRoundedRect(colorDetails, ctx, -20, 0, 40, 4, 2);
+        ctx.rotate(1 / 3);
+        fillRoundedRect(colorDetails, ctx, -20, 0, 40, 4, 2);
+        ctx.rotate(1 / 3);
+        fillRoundedRect(colorDetails, ctx, -20, 0, 40, 4, 2);
+        ctx.rotate(1 / 3);
+        fillRoundedRect(colorDetails, ctx, -20, 0, 40, 4, 2);
+        ctx.rotate(1 / 3);
+        fillRoundedRect(colorDetails, ctx, -20, 0, 40, 4, 2);
+        ctx.rotate(1 / 3);
+        fillRoundedRect(colorDetails, ctx, -20, 0, 40, 4, 2);
+        ctx.rotate(1 / 3);
+        ctx.rotate(1 / 9);
+        fillRoundedRect(colorDetails, ctx, -20, 0, 40, 4, 2);
+        ctx.rotate(1 / 3);
+        fillRoundedRect(colorDetails, ctx, -20, 0, 40, 4, 2);
+        ctx.rotate(1 / 2);
+        fillRoundedRect(colorDetails, ctx, -20, 0, 40, 4, 2);
+        ctx.rotate(1 / 3);
+        fillRoundedRect(colorDetails, ctx, -20, 0, 40, 4, 2);
+        //сбрасываем преобразования пространства
+        ctx.translate(-125, -35);
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+    }
+</script>
+</body>
+</html>
