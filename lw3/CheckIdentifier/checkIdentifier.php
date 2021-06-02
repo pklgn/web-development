@@ -24,7 +24,7 @@ function checkIdentifier($identifier): ?string
         }
         $len -= 1;
     }
-    return 'Yes';
+    return 'Yes, that is an identifier';
 }
 
 $entryValue = $_GET['Identifier'];

@@ -3,7 +3,7 @@
 function createFile($dir): void
 {
     $templateList = ['first_name', 'last_name', 'email', 'age'];
-    $userFile = fopen($dir, "w+");
+    $userFile = fopen($dir, "w");
     foreach ($templateList as $value)
     {
         fwrite($userFile, $value.": \r\n");
@@ -39,7 +39,7 @@ function surveySaver(): string
     foreach($arrayOfParametres as $key => $value)
     {
         $oldValue = current($arrayFile); 
-        echo "arrayOfParametres ".$key." and ".$value."<br />";
+        echo "arrayOfParametres ".$key." and its value ".$value."<br />";
         if (! is_null($value))
         {
             $str = $key.": ".$value."\n";
