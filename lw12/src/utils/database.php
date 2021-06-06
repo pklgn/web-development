@@ -11,7 +11,7 @@ function database(): PDO
 
 function saveFeedback(array $feedback): void
 {
-    $sql = "REPLACE INTO feedback (name, email, country, gender, message)
+    $sql = "INSERT INTO feedback (name, email, country, gender, message)
             VALUES (:name, :email, :country, :gender, :message);";
     $statement = database()->prepare($sql);
     $statement->execute([
@@ -23,11 +23,21 @@ function saveFeedback(array $feedback): void
     ]);
 }
 
+function getLatestFeedback(string $email)
+{
+    $email = database()->quote($email);
+    $sql = "SELECT MAX(id) AS `latestId` FROM feedback WHERE email = {$email};";
+    $statement = database()->query($sql);
+    $latestId = $statement->fetch();
+    return $latestId[0][0];
+}
+
 function getFeedback(string $email): array
 {
-    $sql = "SELECT * FROM feedback WHERE email = ?;";
+    $latestId = getLatestFeedback($email);
+    $sql = "SELECT * FROM feedback WHERE email = ? AND id = ?";
     $statement = database()->prepare($sql);
-    $statement->execute([$email]);
+    $statement->execute([$email, $latestId]);
     return $statement->fetch();
 }
 
