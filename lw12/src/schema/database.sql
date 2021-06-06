@@ -6,7 +6,7 @@ CREATE TABLE feedback
 (
     `id`      INT AUTO_INCREMENT NOT NULL,
     `name`    VARCHAR(255)       NOT NULL,
-    `email`   VARCHAR(255)       NOT NULL UNIQUE,
+    `email`   VARCHAR(255)       NOT NULL,
     `country` VARCHAR(255)       NOT NULL,
     `gender`  VARCHAR(20)        NOT NULL,
     `message` TEXT               NOT NULL,
